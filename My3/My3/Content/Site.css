@@ -1,0 +1,85 @@
+﻿body {
+   
+  
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.container{
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+
+h2.bg-primary{
+    color:white;
+}
+div.jumbotron{
+
+    height:150px;
+    padding-bottom:20px;
+    margin-bottom:inherit;
+    background-color:darkslategrey;
+    text-align:center;
+    background-image:url("../Content/Picture/backgroundmain.jpg");
+    background-repeat:repeat;
+}
+select.form-control{
+    display:inline-block;
+}
+
+div.col-lg-3.bg-primary{
+     border-radius: 46px;
+     background-color:mediumorchid;
+    
+}
+
+img.card-img-top img-fluid img-thumbnail{
+  width: 300px; 
+  height: 350px; 
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-clip:cover; 
+  background-size: cover; 
+  margin: 0 auto;
+
+}
+p.myWhiteColor{
+    color:white;
+}
+card.card-img-top{
+    
+    tab-size:inherit;
+}
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 150px;
+}
+button.btn.btn-default.navbar-btn {
+        margin-left: auto!important;
+}
+#my_input_submit{
+    display:inline;
+}
+input, select {
+    display:inline-block;
+    vertical-align:middle;
+}
+
+

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="daterangepicker/daterangepicker.css">
+    <script src="daterangepicker/moment.js"></script>
+    <script src="daterangepicker/daterangepicker.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <!-- Контейнер (определяет ширину Navbar) -->
+        <div class="container">
+            <!-- Заголовок -->
+            <div class="navbar-header">
+                <!-- Кнопка «Гамбургер» отображается только в мобильном виде (предназначена для открытия основного содержимого Navbar) -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Бренд или название сайта (отображается в левой части меню) -->
+                <a class="navbar-brand" href="#"><img src="~/Content/Picture/logoEVENT.png" width="50" /></a>
+            </div>
+            <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
+            <div class="collapse navbar-collapse" id="navbar-main">
+                <!-- Содержимое основной части -->
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">ALL</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Film</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Buisness</a></li>
+                    <li><a href="#">Family</a></li>
+
+ 
+                </ul>
+                
+              
+                    <div class="nav navbar-nav navbar-right"> 
+                         <button type="button" class="btn btn-default navbar-btn">Войти</button>
+               </div>                  
+            </div>
+        </div>
+    </nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron"> </div>
+        </div>
+    </div>
+
+
+   
+    <nav class="navbar navbar-expand-lg navbar-default">
+       
+            <div class="container">
+                <!-- Заголовок -->
+                <div class="navbar-header">
+                    <!-- Кнопка «Гамбургер» отображается только в мобильном виде (предназначена для открытия основного содержимого Navbar) -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-search">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Бренд или название сайта (отображается в левой части меню) -->
+                    <a class="navbar-brand" href="#">LOOKING FOR</a>
+                </div>
+                <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
+                <div class="collapse navbar-collapse" id="navbar-search">
+                    <form class="navbar-form  form-inline" role="search">
+                
+                                     
+
+                        <input type="text" id="my_input_submit" class="form-control" placeholder="Event">
+
+                        <select class="form-control" id="my_input_submit">
+                            <option value="">Category</option>
+                            <option value="music">Music</option>
+                            <option value="film">Film</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="sports">Sports</option>
+                            <option value="buisness">Buisness</option>
+                            <option value="family">Family</option>
+                        </select>
+
+
+                        <select class="form-control" id="my_input_submit">
+                            <option value="">Status</option>
+                            <option value="completed">Completed</option>
+                            <option value="inprogress">In progress</option>
+                            <option value="planned">Planned</option>
+                        
+                             
+                               
+                       </select>
+                     OR
+                        <input type="date" value="exactdate" class="form-control" id="date" name="date" placeholder="Дата" /> 
+                        <button class="btn btn-success" id="my_input_submit" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+</nav>
+    
+
+
+   
+
+
+    <div class="container">
+        @RenderBody()
+    </div>  
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

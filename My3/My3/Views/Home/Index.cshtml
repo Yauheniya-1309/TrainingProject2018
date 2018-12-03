@@ -5,60 +5,23 @@
 
 
 <div class="row clearfix">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card btn-primary" >
-            <img class="card-img-top img-fluid img-thumbnail btn-primary" src="~/Content/Picture/slider3.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title btn-primary">Concert</h5>
-                <p class="card-text btn-primary">The first time in Mogilev.</p>
-            </div>
-            
-            <div class="card-body btn-primary">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card">
-            <img class="card-img-top img-fluid img-thumbnail" src="~/Content/Picture/slider2.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Concert</h5>
-                <p class="card-text">The first time in Mogilev.</p>
-            </div>
-            
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+    @foreach (Event temp in @ViewBag.events)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <div class="card btn-primary">
+                <img class="card-img-top img-fluid img-thumbnail btn-primary" src="~/Content/Picture/slider3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title btn-primary">@temp.ID</h5>
+                    <p class="card-text btn-primary">@temp.Name</p>
+                    <h5 class="card-title btn-primary">@temp.Date</h5>
+                    <p class="card-text btn-primary">@temp.Description</p>
+                </div>
+
+                <div class="card-body btn-primary">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card bg-primary">
-            <img class="card-img-top img-fluid img-thumbnail" src="~/Content/Picture/slider1.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Concert</h5>
-                <p class="card-text">The first time in Mogilev.</p>
-            </div>
-            
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="card bg-primary">
-            <img class="card-img-top img-fluid img-thumbnail" src="~/Content/Picture/back.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Concert</h5>
-                <p class="card-text">The first time in Mogilev.</p>
-            </div>
-            
-            <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-            </div>
-        </div>
-    </div>
+    }
 </div>

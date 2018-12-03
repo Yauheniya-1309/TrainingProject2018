@@ -1,0 +1,6 @@
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\My3Common.dll
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\My3Common.pdb
+D:\Epam\MY_PROJECT\My3\My3Common\obj\Debug\My3Common.dll
+D:\Epam\MY_PROJECT\My3\My3Common\obj\Debug\My3Common.pdb
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.dll
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.xml

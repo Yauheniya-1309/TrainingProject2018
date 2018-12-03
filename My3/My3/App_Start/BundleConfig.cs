@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace My3
+namespace My3Common
 {
     public class BundleConfig
     {

@@ -51,3 +51,7 @@ D:\Epam\MY_PROJECT\My3\My3\bin\Newtonsoft.Json.xml
 D:\Epam\MY_PROJECT\My3\My3\obj\Debug\My3.csprojResolveAssemblyReference.cache
 D:\Epam\MY_PROJECT\My3\My3\obj\Debug\My3.dll
 D:\Epam\MY_PROJECT\My3\My3\obj\Debug\My3.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\log4net.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\log4net.xml
+D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.xml

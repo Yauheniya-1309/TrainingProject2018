@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace My3
+namespace My3Common
 {
     public class RouteConfig
     {

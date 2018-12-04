@@ -15,26 +15,27 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace My3Common.DependencyResolution
-{
-    using StructureMap;
+namespace My3.DependencyResolution {
     using My3Common;
+    using StructureMap.Configuration.DSL;
+    using StructureMap.Graph;
 
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
 
-        public DefaultRegistry()
-        {
-            Scan(
-                scan => {
-                    scan.TheCallingAssembly();
-                   
-                });
+        public DefaultRegistry() 
+            {
+                Scan(
+                    scan => {
+                        scan.TheCallingAssembly();
 
-            For<ICategory>().Use<Category>();
-            For<IUser>().Use<User>();
-            For<IRole>().Use<Role>();
-            For<IUserRole>().Use<UserRole>();
+                    });
+
+                For<ICategory>().Use<Category>();
+                For<IUser>().Use<User>();
+                For<IRole>().Use<Role>();
+                For<IUserRole>().Use<UserRole>();
+            
         }
 
         #endregion

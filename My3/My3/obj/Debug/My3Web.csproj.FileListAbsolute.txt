@@ -70,3 +70,6 @@ D:\Epam\MY_PROJECT\My3\My3\bin\My3Business.pdb
 D:\Epam\MY_PROJECT\My3\My3\bin\My3Common.pdb
 D:\Epam\MY_PROJECT\My3\My3\bin\My3DependencyInjection.pdb
 D:\Epam\MY_PROJECT\My3\My3\bin\My3DataAccess.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.Net4.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.Net4.pdb

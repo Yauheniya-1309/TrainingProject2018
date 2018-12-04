@@ -15,19 +15,19 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-using My3Common.App_Start;
+using My3.App_Start;
 
 using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(StructuremapMvc), "Start")]
 [assembly: ApplicationShutdownMethod(typeof(StructuremapMvc), "End")]
 
-namespace My3Common.App_Start {
+namespace My3.App_Start {
 	using System.Web.Mvc;
 
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
-	using My3Common.DependencyResolution;
+	using My3.DependencyResolution;
 
     using StructureMap;
     

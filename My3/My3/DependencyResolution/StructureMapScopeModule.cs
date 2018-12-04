@@ -1,7 +1,7 @@
-namespace My3Common.DependencyResolution {
+namespace My3.DependencyResolution {
     using System.Web;
 
-    using My3Common.App_Start;
+    using My3.App_Start;
 
     using StructureMap.Web.Pipeline;
 

@@ -15,7 +15,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace My3Common.DependencyResolution {
+namespace My3.DependencyResolution {
     using System;
     using System.Collections.Generic;
     using System.Linq;

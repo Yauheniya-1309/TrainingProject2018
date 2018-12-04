@@ -12,9 +12,15 @@ namespace My3Business
     public class BusinessLayer : IBusinessLayer
     {
         private DataAccessLayer dataAccessLayer;
+
         public Category GetCategoryById(int id)
         {
             return this.dataAccessLayer.GetCategory(id);
+        }
+
+        public User GetUserById(int id)
+        {
+            return this.dataAccessLayer.GetUser(id);
         }
     }
 }

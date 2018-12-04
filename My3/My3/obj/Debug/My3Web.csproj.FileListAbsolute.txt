@@ -62,3 +62,11 @@ D:\Epam\MY_PROJECT\My3\My3\bin\System.Web.WebPages.Razor.xml
 D:\Epam\MY_PROJECT\My3\My3\bin\Antlr3.Runtime.pdb
 D:\Epam\MY_PROJECT\My3\My3\bin\Newtonsoft.Json.xml
 D:\Epam\MY_PROJECT\My3\My3\obj\Debug\My3Web.csprojResolveAssemblyReference.cache
+D:\Epam\MY_PROJECT\My3\My3\bin\My3Business.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\My3Common.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\My3DependencyInjection.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\My3DataAccess.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\My3Business.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\My3Common.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\My3DependencyInjection.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\My3DataAccess.pdb

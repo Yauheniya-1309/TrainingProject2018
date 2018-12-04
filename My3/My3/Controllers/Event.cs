@@ -1,6 +1,6 @@
 ﻿namespace My3Common.Controllers
 {
-    internal class Event : IEvent
+    public class Event : IEvent
     {
         public string Date { get; set; }
         public string Description { get; set; }

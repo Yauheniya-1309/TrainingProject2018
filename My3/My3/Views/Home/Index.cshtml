@@ -1,11 +1,12 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "Home Page";
 }
 
 
 
 <div class="row clearfix">
-    @foreach (Event temp in @ViewBag.events)
+    @foreach (var temp in @ViewBag.events)
     {
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="card btn-primary">

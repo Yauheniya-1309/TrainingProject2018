@@ -28,9 +28,13 @@ namespace My3Common.DependencyResolution
             Scan(
                 scan => {
                     scan.TheCallingAssembly();
+                   
                 });
 
             For<ICategory>().Use<Category>();
+            For<IUser>().Use<User>();
+            For<IRole>().Use<Role>();
+            For<IUserRole>().Use<UserRole>();
         }
 
         #endregion

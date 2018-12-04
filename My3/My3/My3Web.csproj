@@ -172,6 +172,7 @@
     <Compile Include="Controllers\Event.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IEvent.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -238,6 +239,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +253,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\My3Business\My3Business.csproj">
+      <Project>{1d984600-538b-4800-846a-d15591c06fc6}</Project>
+      <Name>My3Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\My3Common\My3Common.csproj">
+      <Project>{6e2b9db1-43a2-4396-aa4f-36f5e6facc19}</Project>
+      <Name>My3Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\My3DependencyInjection\My3DependencyInjection.csproj">
+      <Project>{2381fdd8-b471-4142-9875-5ed18bb7bdd9}</Project>
+      <Name>My3DependencyInjection</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

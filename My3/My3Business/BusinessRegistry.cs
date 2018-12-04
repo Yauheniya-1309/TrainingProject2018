@@ -13,11 +13,7 @@ namespace My3Business
     {
         public BusinessRegistry()
         {
-            Scan(
-                scan => {
-                    scan.TheCallingAssembly();
-                });
-
+           
             For<IBusinessLayer>().Use<BusinessLayer>();
         }
     }

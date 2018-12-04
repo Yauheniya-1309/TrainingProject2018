@@ -15,10 +15,11 @@ namespace My3DependencyInjection
         {
             Scan(
                 scan => {
-                    //scan.TheCallingAssembly();
-                    //scan.WithDefaultConventions();
+                    scan.TheCallingAssembly();
+                    scan.WithDefaultConventions();
                     scan.AssemblyContainingType<BusinessRegistry>();
                     scan.AssemblyContainingType<DARegistry>();
+                    scan.LookForRegistries();
                 });
 
         }

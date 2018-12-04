@@ -11,6 +11,12 @@ namespace My3.Controllers
     public class UserController : Controller
     {
         private IBusinessLayer businessLayer;
+        
+        public UserController(IBusinessLayer businessLayer)
+        {
+            this.businessLayer = businessLayer;
+        }
+
         // GET: User
         public ActionResult Index()
         {
@@ -20,8 +26,7 @@ namespace My3.Controllers
         // GET: User/Details/5
         public ActionResult Details(int id)
         {
-            return View(this.businessLayer.GetUserById(id));       
-                      
+            return View(this.businessLayer.GetUserById(id));                   
         }
 
         // GET: User/Create

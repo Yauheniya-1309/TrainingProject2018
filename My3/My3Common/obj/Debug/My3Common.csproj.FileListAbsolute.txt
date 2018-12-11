@@ -4,3 +4,6 @@ D:\Epam\MY_PROJECT\My3\My3Common\obj\Debug\My3Common.dll
 D:\Epam\MY_PROJECT\My3\My3Common\obj\Debug\My3Common.pdb
 D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.dll
 D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.xml
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.Net4.dll
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.pdb
+D:\Epam\MY_PROJECT\My3\My3Common\bin\Debug\StructureMap.Net4.pdb

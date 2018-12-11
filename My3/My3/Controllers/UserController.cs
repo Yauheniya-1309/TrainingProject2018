@@ -1,4 +1,5 @@
-﻿using My3Business;
+﻿
+using My3Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +16,14 @@ namespace My3.Controllers
         public UserController(IBusinessLayer businessLayer)
         {
             this.businessLayer = businessLayer;
+         
+
         }
 
         // GET: User
         public ActionResult Index()
         {
+            
             return View();
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using My3Business;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,14 @@ namespace My3Common.Controllers
 {
     public class HomeController : Controller
     {
+        private IBusinessLayer businessLayer;
+
+        public HomeController(IBusinessLayer businessLayer)
+        {
+            this.businessLayer = businessLayer;
+            ViewBag.Weather = this.businessLayer.Weather();
+        }
+
         List<IEvent> events = new List<IEvent>();
         public ActionResult Index()
         {
@@ -17,6 +27,7 @@ namespace My3Common.Controllers
            
            
             ViewBag.events = events;
+            
             return View();
         }
 

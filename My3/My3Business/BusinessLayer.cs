@@ -1,4 +1,5 @@
-﻿using My3Common;
+﻿using My3Business.ServiceReference1;
+using My3Common;
 using My3DataAccess;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,19 @@ namespace My3Business
 {
     public class BusinessLayer : IBusinessLayer
     {
-        private DataAccessLayer dataAccessLayer;
+        public WeatherWebServiceClient client = new WeatherWebServiceClient();
+
+        public IDataAccessLayer dataAccessLayer;
+
+        public string Weather()
+        {
+          return this.client.Weather();
+        }
+
+        public BusinessLayer(IDataAccessLayer dataAccessLayer)
+        {
+            this.dataAccessLayer = dataAccessLayer;
+        }
 
         public Category GetCategoryById(int id)
         {

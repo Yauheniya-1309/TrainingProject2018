@@ -17,3 +17,7 @@ D:\Epam\MY_PROJECT\My3\My3Business\bin\Debug\StructureMap.Web.pdb
 D:\Epam\MY_PROJECT\My3\My3Business\bin\Debug\StructureMap.Web.xml
 D:\Epam\MY_PROJECT\My3\My3Business\obj\Debug\My3Business.dll
 D:\Epam\MY_PROJECT\My3\My3Business\obj\Debug\My3Business.pdb
+D:\Epam\MY_PROJECT\My3\My3Business\bin\Debug\StructureMap.Net4.dll
+D:\Epam\MY_PROJECT\My3\My3Business\bin\Debug\StructureMap.pdb
+D:\Epam\MY_PROJECT\My3\My3Business\bin\Debug\StructureMap.Net4.pdb
+D:\Epam\MY_PROJECT\My3\My3Business\bin\Debug\My3Business.dll.config

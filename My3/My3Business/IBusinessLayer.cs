@@ -6,5 +6,6 @@ namespace My3Business
     {
         Category GetCategoryById(int id);
         User GetUserById(int id);
+        string Weather();
     }
 }

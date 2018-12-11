@@ -19,3 +19,6 @@ D:\Epam\MY_PROJECT\My3\My3DependencyInjection\bin\Debug\StructureMap.Web.xml
 D:\Epam\MY_PROJECT\My3\My3DependencyInjection\bin\Debug\My3Common.pdb
 D:\Epam\MY_PROJECT\My3\My3DependencyInjection\obj\Debug\My3DependencyInjection.dll
 D:\Epam\MY_PROJECT\My3\My3DependencyInjection\obj\Debug\My3DependencyInjection.pdb
+D:\Epam\MY_PROJECT\My3\My3DependencyInjection\bin\Debug\StructureMap.Net4.dll
+D:\Epam\MY_PROJECT\My3\My3DependencyInjection\bin\Debug\StructureMap.pdb
+D:\Epam\MY_PROJECT\My3\My3DependencyInjection\bin\Debug\StructureMap.Net4.pdb

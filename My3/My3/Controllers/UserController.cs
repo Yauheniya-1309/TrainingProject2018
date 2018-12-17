@@ -1,4 +1,5 @@
 ﻿
+using My3Common;
 using My3Business;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,29 @@ namespace My3.Controllers
         public UserController(IBusinessLayer businessLayer)
         {
             this.businessLayer = businessLayer;
-         
 
         }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
+            var newUser = new User();
+            return View(newUser);
+        }
+
+        [HttpPost]
+        public ActionResult Register(User user)
+        {
+            return View(user);
+        }
+
+
+        [HttpGet]
+        public ActionResult Entrance()
+        {
+            return View();
+        }
+
 
         // GET: User
         public ActionResult Index()

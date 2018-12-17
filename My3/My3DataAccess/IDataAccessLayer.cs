@@ -6,5 +6,9 @@ namespace My3DataAccess
     {
         User GetUser(int id);
         Category GetCategory(int id);
+        void AddCategory(string category);
+        User GetUserByLogin(string userName, string userPassword);
+        Event GetEventById(int id);
+
     }
 }

@@ -26,7 +26,7 @@ namespace My3.DependencyResolution {
             {
                 c.AddRegistry<DefaultRegistry>();
                 c.AddRegistry<MainRegistry>();
-                }
+            }
             );
         }
     }

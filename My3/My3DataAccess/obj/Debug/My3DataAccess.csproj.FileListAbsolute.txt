@@ -5,16 +5,13 @@ D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\Microsoft.Practices.ServiceLocati
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\Microsoft.Web.Infrastructure.dll
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\My3Common.dll
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.dll
-D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.Web.dll
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\WebActivatorEx.dll
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\My3Common.pdb
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.xml
-D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.Web.pdb
-D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.Web.xml
 D:\Epam\MY_PROJECT\My3\My3DataAccess\obj\Debug\My3DataAccess.dll
 D:\Epam\MY_PROJECT\My3\My3DataAccess\obj\Debug\My3DataAccess.pdb
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.Net4.dll
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.pdb
+D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.xml
 D:\Epam\MY_PROJECT\My3\My3DataAccess\bin\Debug\StructureMap.Net4.pdb

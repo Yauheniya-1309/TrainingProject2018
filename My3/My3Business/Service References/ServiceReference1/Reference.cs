@@ -15,11 +15,11 @@ namespace My3Business.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IWeatherWebService")]
     public interface IWeatherWebService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWeatherWebService/Weather", ReplyAction="http://tempuri.org/IWeatherWebService/WeatherResponse")]
-        string Weather();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWeatherWebService/DoWork", ReplyAction="http://tempuri.org/IWeatherWebService/DoWorkResponse")]
+        string DoWork();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWeatherWebService/Weather", ReplyAction="http://tempuri.org/IWeatherWebService/WeatherResponse")]
-        System.Threading.Tasks.Task<string> WeatherAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWeatherWebService/DoWork", ReplyAction="http://tempuri.org/IWeatherWebService/DoWorkResponse")]
+        System.Threading.Tasks.Task<string> DoWorkAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +49,12 @@ namespace My3Business.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public string Weather() {
-            return base.Channel.Weather();
+        public string DoWork() {
+            return base.Channel.DoWork();
         }
         
-        public System.Threading.Tasks.Task<string> WeatherAsync() {
-            return base.Channel.WeatherAsync();
+        public System.Threading.Tasks.Task<string> DoWorkAsync() {
+            return base.Channel.DoWorkAsync();
         }
     }
 }

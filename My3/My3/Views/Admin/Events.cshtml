@@ -1,0 +1,81 @@
+﻿@model IEnumerable<My3Common.Event>
+
+@{
+    Layout = "~/Views/Shared/_LayoutForTableAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Events</title>
+</head>
+<body>
+    <p>
+        <input type="button" value="Create New Event" onclick="location.href='@Url.Action("Create","Event")'" class="btn btn-default" />
+
+    </p>
+    <table class="table">
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+           
+            <th></th>
+        </tr>
+    
+    @foreach (var item in @ViewBag.events) {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.CategoryID
+            </td>
+            <td>
+                @item.Place
+            </td>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.Date
+            </td>
+            <td>
+                @item.Description
+            </td>
+           
+            <td >
+                @Html.ActionLink("Edit", "Edit","Event", new { id = item.ID },null)
+                @Html.ActionLink("Details", "Details","Event", new { id=item.ID },null)
+                @Html.ActionLink("Delete", "Delete","Event", new { id=item.ID },null)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

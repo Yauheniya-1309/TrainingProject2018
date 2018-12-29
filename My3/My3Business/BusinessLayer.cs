@@ -27,45 +27,115 @@ namespace My3Business
          return this.client.DoWork();
         }
 
-        public IQueryable<Role> Roles
-        {
-            get { throw new NotImplementedException(); }
-        }
 
-        public bool CreateRole(Role instance)
-        {
-            throw new NotImplementedException();
-        }
 
-        public bool UpdateRole(Role instance)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool RemoveRole(int idRole)
-        {
-            throw new NotImplementedException();
-        }
 
 
         public Category GetCategoryById(int id)
         {
-            return this.dataAccessLayer.GetCategory(id);
+            return this.dataAccessLayer.GetCategoryById(id);
         }
+
+        public List<Category> GetCategories()
+        {
+            return this.dataAccessLayer.GetCategories();
+        }
+
+        public void AddCategory(Category newCategory)
+        {
+            this.dataAccessLayer.AddCategory(newCategory);
+        }
+
+        public void EditCategory(Category editCategory)
+        {
+            this.dataAccessLayer.EditCategory(editCategory);
+        }
+
+        public void DeleteCategory(Category deleteCategory)
+        {
+            this.dataAccessLayer.DeleteCategory(deleteCategory);
+        }
+
+
+
 
         public Event GetEventById(int id)
         {
             return this.dataAccessLayer.GetEventById(id);
         }
 
-        public User GetUserById(string userName, string userPassword)
+        public List<Event> GetEvents()
         {
-            return this.dataAccessLayer.GetUserByLogin(userName, userPassword);
+            return this.dataAccessLayer.GetEvents();
         }
+
+        public void AddEvent(Event newEvent)
+        {
+            this.dataAccessLayer.AddEvent(newEvent);
+        }
+
+        public void EditEvent(Event editEvent)
+        {
+            this.dataAccessLayer.EditEvent(editEvent);
+        }
+
+        public void DeleteEvent(Event deleteEvent)
+        {
+            this.dataAccessLayer.DeleteEvent(deleteEvent);
+        }
+
+
 
         public User GetUserById(int id)
         {
-            throw new NotImplementedException();
+            return this.dataAccessLayer.GetUserById(id);
+        }
+
+        public List<User> GetUsers()
+        {
+            return this.dataAccessLayer.GetUsers();
+        }
+
+        public void EditUser(User editUser)
+        {
+            this.dataAccessLayer.EditUser(editUser);
+        }
+
+        public void DeleteUser(User DeleteUser)
+        {
+            this.dataAccessLayer.DeleteUser(DeleteUser);
+        }
+
+        public void AddNewUser(User newUser)
+        {
+            this.dataAccessLayer.AddNewUser(newUser);
+        }
+
+
+
+        public List<Role> GetRoles()
+        {
+            return this.dataAccessLayer.GetRoles();
+        }
+
+        public Role GetRoleById(int id)
+        {
+           return this.dataAccessLayer.GetRoleById(id);
+        }
+
+        public void EditRole(Role editeRole)
+        {
+            this.dataAccessLayer.EditRole(editeRole);
+        }
+
+        public void DeleteRole(Role deleteRole)
+        {
+            this.dataAccessLayer.DeleteRole(deleteRole);
+        }
+
+        public void AddNewRole(Role newRole)
+        {
+            this.dataAccessLayer.AddNewRole(newRole);
         }
     }
 }

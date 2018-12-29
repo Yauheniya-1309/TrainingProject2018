@@ -1,30 +1,110 @@
 ﻿@model My3Common.User
 
 @{
-    ViewBag.Title = "UserDetails";
+    Layout = null;
 }
 
-<h2>UserDetails</h2>
+<!DOCTYPE html>
 
-<div>
-    <h4>User</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ID)
-        </dt>
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ID)
-        </dd>
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/UserDetailsForm.css">
+    <title>User Details</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h4> User Details </h4>
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ID, "ID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.ID)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Role, "Role", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    @Html.ValidationMessageFor(model => model.Role)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Login, "Login", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    @Html.ValidationMessageFor(model => model.Login)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 name">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AddedDate, "AddedDate", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.AddedDate, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    @Html.ValidationMessageFor(model => model.AddedDate)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, "PhoneNumber", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @readonly = "readonly" } })
+
+                    @Html.ValidationMessageFor(model => model.PhoneNumber)
+                </div>
+            </div>
+
+
+ 
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Back to List" onclick="location.href='@Url.Action("Users","Admin")'" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+    }
+
+
+
+
+    <p>
+
+    </p>
+</body>
+</html>

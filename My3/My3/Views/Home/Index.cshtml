@@ -3,29 +3,40 @@
     ViewBag.Title = "Home Page";
 }
 
-
-
-
-
 <div class="row clearfix">
+    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-4">
+        <div class="nav navbar-nav">
+
+            <a href="~/Event/Create/"><button type="button" class="btn btn-default navbar-btn">Добаваить</button></a>
+
+        </div>
+    </div>
+
     @foreach (var temp in @ViewBag.events)
     {
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="card btn-primary">
-                <img class="card-img-top img-fluid img-thumbnail btn-primary" src="~/Content/Picture/slider3.jpg" alt="Card image cap">
+                <div class="text-center">
+                    <img class="card-img-top img-fluid  btn-primary" src="@Url.Content(@temp.Picture)" alt="Card image cap" height="100">
+                </div>
                 <div class="card-body">
-                    <h5 class="card-title btn-primary">@temp.ID</h5>
+
                     <p class="card-text btn-primary">@temp.Name</p>
+                    <p class="card-text btn-primary">@temp.CategoryID</p>
                     <h5 class="card-title btn-primary">@temp.Date</h5>
-                    <p class="card-text btn-primary">@temp.Description</p>
+                    <p class="card-text btn-primary">@temp.Place</p>
+                    
                 </div>
 
-                <div class="card-body btn-primary">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                <div class="card-body btn-primary text-center">
+
+                    <input type="button" value="More Details" onclick="location.href='@Url.Action("Details","Event",new { id = temp.ID })'" class="btn btn-default" />
+
                 </div>
             </div>
         </div>
     }
-    
+
+
+
 </div>

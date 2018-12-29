@@ -2,6 +2,7 @@
 using My3Common;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,34 +12,45 @@ namespace My3.Controllers
     public class EventController : Controller
     {
         private IBusinessLayer businessLayer;
-        // GET: Event
-        public ActionResult Index()
+
+        public EventController(IBusinessLayer businessLayer)
         {
-            return View();
+            this.businessLayer = businessLayer;
         }
 
-        // GET: Event/Details/5
+        
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        // GET: Event/Details/id
+
+        [HttpGet]
         public ActionResult Details(int id)
         {
-            Event event1 = this.businessLayer.GetEventById(3);
-            return View();
+            Event event1 = this.businessLayer.GetEventById(id);
+            return View(event1);
         }
 
-        // GET: Event/Create
         public ActionResult Create()
         {
+            SelectList categories = new SelectList(this.businessLayer.GetCategories(), "CategoryID", "Name");
+            ViewBag.Categories = categories;
             return View();
         }
 
-        // POST: Event/Create
+
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Event createEvent)
         {
+           
+           
             try
             {
-                // TODO: Add insert logic here
+                this.businessLayer.AddEvent(createEvent);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Events", "Admin");
             }
             catch
             {
@@ -46,48 +58,85 @@ namespace My3.Controllers
             }
         }
 
-        // GET: Event/Edit/5
+
+
+        public IEnumerable<SelectListItem> GetCategoriesForSelectListItems()
+        {
+            List<Category> AllCat = this.businessLayer.GetCategories();
+            List<SelectListItem> categories = AllCat
+             .OrderBy(c => c.Name)
+             .Select(
+              c =>
+               new SelectListItem
+               {
+                   Value = c.CategoryID.ToString(),
+                   Text = c.Name
+               }).ToList();
+
+           
+            var helper = new SelectListItem()
+            {
+                Value = null,
+                Text = "---select category---"
+            };
+
+            categories.Insert(0, helper);
+            return new SelectList(categories, "Value", "Text");
+        }
+
+
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            Event event1 = this.businessLayer.GetEventById(id);
+            ViewBag.Categories = GetCategoriesForSelectListItems();
+            return View(event1);
         }
 
-        // POST: Event/Edit/5
+
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Event editEvent)
         {
             try
-            {
-                // TODO: Add update logic here
+            { 
+                this.businessLayer.EditEvent(editEvent);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Events", "Admin");
             }
             catch
             {
                 return View();
             }
+
         }
 
-        // GET: Event/Delete/5
+
+        [HttpGet]
         public ActionResult Delete(int id)
         {
-            return View();
+            Event event1 = this.businessLayer.GetEventById(id);
+           
+            return View(this.businessLayer.GetEventById(id));
         }
 
-        // POST: Event/Delete/5
+
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(Event DeleteEvent)
         {
             try
             {
-                // TODO: Add delete logic here
+                this.businessLayer.DeleteEvent(DeleteEvent);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Events", "Admin");
+
             }
             catch
             {
                 return View();
             }
+
         }
+
+        
     }
 }

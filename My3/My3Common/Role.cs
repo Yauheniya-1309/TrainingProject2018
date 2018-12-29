@@ -10,7 +10,7 @@ namespace My3Common
     public class Role:IRole
     {
         [Key]
-        public int ID { get; }
+        public int ID { get; set; }
 
         public string Code { get; set; }
 

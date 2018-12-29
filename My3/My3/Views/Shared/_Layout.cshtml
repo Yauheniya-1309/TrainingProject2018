@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - My Event</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="daterangepicker/daterangepicker.css">
@@ -24,20 +24,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Бренд или название сайта (отображается в левой части меню) -->
-                <a class="navbar-brand" href="#"><img src="~/Content/Picture/logoEVENT.png" width="50" /></a>
+                <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/Picture/logoEVENT.png" width="50" /></a>
             </div>
             <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
             <div class="collapse navbar-collapse" id="navbar-main">
                 <!-- Содержимое основной части -->
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">ALL</a></li>
-                    <li><a href="#">Music</a></li>
-                    <li><a href="#">Film</a></li>
-                    <li><a href="#">Fashion</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Buisness</a></li>
-                    <li><a href="#">Family</a></li>
-
+                    <li><a href="~/Admin/Events">Events</a></li>
+                    <li><a href="~/Admin/Users">Users</a></li>
+                    <li><a href="~/Admin/Categories">Categories</a></li>
+                    <li><a href="~/Admin/Roles">Roles</a></li>
+                   
  
                 </ul>
                 

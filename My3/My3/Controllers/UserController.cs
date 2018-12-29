@@ -42,33 +42,34 @@ namespace My3.Controllers
 
 
         // GET: User
-        public ActionResult Index()
-        {
+        //public ActionResult Index()
+        //{
             
-            return View();
-        }
+        //    return View();
+        //}
 
-        // GET: User/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
-            return View(this.businessLayer.GetUserById(id));                   
+            return View(this.businessLayer.GetUserById(id));
         }
 
-        // GET: User/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: User/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(User newUser)
         {
+            newUser.AddedDate = DateTime.Now;
+            newUser.Role = "User";
             try
             {
-                // TODO: Add insert logic here
+                this.businessLayer.AddNewUser(newUser);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Users", "Admin");
             }
             catch
             {
@@ -76,21 +77,21 @@ namespace My3.Controllers
             }
         }
 
-        // GET: User/Edit/5
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(this.businessLayer.GetUserById(id));
         }
 
-        // POST: User/Edit/5
+    
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(User editUser)
         {
             try
             {
-                // TODO: Add update logic here
+                this.businessLayer.EditUser(editUser);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Users", "Admin");
             }
             catch
             {
@@ -98,21 +99,23 @@ namespace My3.Controllers
             }
         }
 
-        // GET: User/Delete/5
+
+        [HttpGet]
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(this.businessLayer.GetUserById(id));
         }
 
-        // POST: User/Delete/5
+        
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(User DeleteUser)
         {
             try
             {
-                // TODO: Add delete logic here
+                this.businessLayer.DeleteUser(DeleteUser);
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Users", "Admin");
+
             }
             catch
             {

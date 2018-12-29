@@ -9,66 +9,85 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
+    <link rel="stylesheet" href="~/Content/EventDetailsForm.css">
+    <title>Details Event</title>
 </head>
 <body>
-    <div>
-        <h4>Event</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Name)
-            </dt>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h4> Event Details </h4>
+        <div class="form-horizontal">
+
+           
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, "Name", htmlAttributes: new { @class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Place, "Place", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Place, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Place)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, "User", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.UserName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Date, "Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10 name">
+                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Date)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @readonly = "readonly" } })
+                   
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CategoryID, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CategoryID, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.CategoryID)
+                </div>
+            </div>
+
+
+
+
+
+
+           
+            <div class="form-actions no-color">
+                <input type="button" value="Back to List" onclick="location.href='@Url.Action("Events","Admin")'" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+
+
     
-            <dd>
-                @Html.DisplayFor(model => model.Name)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Place)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Place)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.UserID)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.UserID)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Date)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Date)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Picture)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Picture)
-            </dd>
-    
-        </dl>
-    </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-        @Html.ActionLink("Back to List", "Index")
+        
     </p>
 </body>
 </html>

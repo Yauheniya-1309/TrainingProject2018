@@ -1,0 +1,53 @@
+﻿@model IEnumerable<My3Common.Role>
+
+@{
+    Layout = "~/Views/Shared/_LayoutForTableAdmin.cshtml"; ;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Roles</title>
+</head>
+<body>
+    <p>
+        <input type="button" value="Create New Role" onclick="location.href='@Url.Action("Create","Role")'" class="btn btn-default" />
+  </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in @ViewBag.roles) {
+        <tr>
+            <td>
+                @item.ID
+            </td>
+            <td>
+                @item.Code
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Role", new { id = item.ID }, null)
+                @Html.ActionLink("Details", "Details", "Role", new { id = item.ID }, null)
+                @Html.ActionLink("Delete", "Delete", "Role", new { id = item.ID }, null)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

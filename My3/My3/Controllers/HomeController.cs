@@ -17,24 +17,20 @@ namespace My3Common.Controllers
     {
         private IBusinessLayer businessLayer;
 
+        List<Event> events = new List<Event>();
+
         public HomeController(IBusinessLayer businessLayer)
         {
             this.businessLayer = businessLayer;
         }
 
-        List<IEvent> events = new List<IEvent>();
-
         public ActionResult Index()
         {
-           // events = this.businessLayer;
-            
+            events = this.businessLayer.GetEvents();
             ViewBag.events = events;
             ViewBag.Weather=this.businessLayer.DoWeather();
             return View();
         }
-
-       
-
-        
+               
     }
 }

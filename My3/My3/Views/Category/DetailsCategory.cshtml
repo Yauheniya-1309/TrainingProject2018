@@ -1,0 +1,39 @@
+﻿@model My3Common.Category
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/CategoryDetailsForm.css">
+    <title>Details Category</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h4> Category Details </h4>
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+           
+            <div class="form-actions no-color">
+                <input type="button" value="Back to List" onclick="location.href='@Url.Action("Categories","Admin")'" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+    
+</body>
+</html>

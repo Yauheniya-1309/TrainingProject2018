@@ -1,0 +1,47 @@
+﻿@model IEnumerable<My3Common.Category>
+
+@{
+    Layout = "~/Views/Shared/_LayoutForTableAdmin.cshtml"; ;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Categories</title>
+</head>
+<body>
+    <p>
+        <input type="button" value="Create New Category" onclick="location.href='@Url.Action("CreateCategory","Category")'" class="btn btn-default" />
+   </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in @ViewBag.categories) {
+        <tr>
+            <td>
+                @item.CategoryID
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditCategory","Category", new { id=item.ID },null) |
+                @Html.ActionLink("Details", "DetailsCategory", "Category", new { id=item.ID },null) |
+                @Html.ActionLink("Delete", "DeleteCategory", "Category", new { id=item.ID },null)
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

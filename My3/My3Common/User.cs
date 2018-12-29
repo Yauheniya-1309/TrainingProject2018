@@ -25,10 +25,10 @@ namespace My3Common
 
         public DateTime AddedDate { get; set; }
 
-        [Phone(ErrorMessage = "Поле PhoneNumber должно быть установлено")]
+      
         public string PhoneNumber { get; set; }
 
-        public int RoleID { get; set; }
+        public string Role { get; set; }
 
         public string Login { get; set; }
     }

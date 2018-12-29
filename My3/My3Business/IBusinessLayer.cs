@@ -1,24 +1,58 @@
 ﻿using My3Common;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace My3Business
 {
     public interface IBusinessLayer
     {
-        Category GetCategoryById(int id);
-        User GetUserById(int id);
         string DoWeather();
 
-        IQueryable<Role> Roles { get; }
 
-        bool CreateRole(Role instance);
+        Category GetCategoryById(int id);
 
-        bool UpdateRole(Role instance);
+        List<Category> GetCategories();
 
-        bool RemoveRole(int idRole);
+        void AddCategory(Category newCategory);
+
+        void EditCategory(Category editCategory);
+
+        void DeleteCategory(Category deleteCategory);
+
+
 
         Event GetEventById(int id);
 
-        User GetUserById(string userName, string userPassword);
+        List<Event> GetEvents();
+
+        void AddEvent(Event newEvent);
+
+        void EditEvent(Event editeEvent);
+
+        void DeleteEvent(Event deleteEvent);
+
+
+
+        List<User> GetUsers();
+
+        User GetUserById(int id);
+
+        void EditUser(User editeUser);
+
+        void DeleteUser(User deleteUser);
+
+        void AddNewUser(User newUser);
+
+
+        List<Role> GetRoles();
+
+        Role GetRoleById(int id);
+
+        void EditRole(Role editeRole);
+
+        void DeleteRole(Role deleteRole);
+
+        void AddNewRole(Role newRole);
     }
 }

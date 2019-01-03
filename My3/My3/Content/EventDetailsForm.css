@@ -134,5 +134,19 @@ textarea {
   font-size:14px;
 }
 
+select{
+  display:block;
+  width:350px;
+  padding:14px;
+  -webkit-border-radius:6px;
+     -moz-border-radius:6px;
+          border-radius:6px;
+  border:0;
+  margin-bottom:12px;
+  color:#7f8c8d;
+  font-weight:600;
+  font-size:16px;
+}
+
 
 

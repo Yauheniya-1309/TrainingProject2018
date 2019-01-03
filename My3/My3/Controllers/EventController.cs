@@ -35,9 +35,9 @@ namespace My3.Controllers
 
         public ActionResult Create()
         {
-            SelectList categories = new SelectList(this.businessLayer.GetCategories(), "CategoryID", "Name");
-            ViewBag.Categories = categories;
-            return View();
+          //  SelectList categories = new SelectList(this.businessLayer.GetCategories(), "CategoryID", "Name");
+          //  ViewBag.Categories = categories;
+            return View(new Event { Categories = this.businessLayer.GetCategories() });
         }
 
 
@@ -89,7 +89,8 @@ namespace My3.Controllers
         public ActionResult Edit(int id)
         {
             Event event1 = this.businessLayer.GetEventById(id);
-            ViewBag.Categories = GetCategoriesForSelectListItems();
+            event1.Categories =(List <Category>)GetCategoriesForSelectListItems();
+         
             return View(event1);
         }
 

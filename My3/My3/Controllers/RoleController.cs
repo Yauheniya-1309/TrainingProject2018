@@ -1,13 +1,15 @@
-﻿using My3Business;
-using My3Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace My3.Controllers
+﻿namespace My3.Controllers
 {
+    #region Using
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using System.Web.Mvc;
+    using My3Business;
+    using My3Common;
+    #endregion
+
     public class RoleController : Controller
     {
         private IBusinessLayer businessLayer;
@@ -15,42 +17,41 @@ namespace My3.Controllers
         public RoleController(IBusinessLayer businessLayer)
         {
             this.businessLayer = businessLayer;
+            ViewBag.Weather = this.businessLayer.DoWeather();
+            ViewBag.Time = DateTime.Now.ToShortDateString();
         }
-
-
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-
-        // GET: Role/Details/5
 
         public ActionResult Details(int id)
         {
             Role role1 = this.businessLayer.GetRoleById(id);
+
             return View(role1);
         }
 
-        
         public ActionResult Create()
         {
             return View();
         }
 
-       
         [HttpPost]
         public ActionResult Create(Role newRole)
         {
-            try
+            if (ModelState.IsValid)
             {
-                this.businessLayer.AddNewRole(newRole);
+                try
+                {
+                    this.businessLayer.AddNewRole(newRole);
 
-                return RedirectToAction("Roles", "Admin");
+                    return RedirectToAction("Roles", "Admin");
+                }
+                catch(Exception ex)
+                {
+                    Log4NetHandler.Log.Error("The Role doesn't craete" + ex.Message);
+
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         [HttpGet]
@@ -59,41 +60,45 @@ namespace My3.Controllers
             return View(this.businessLayer.GetRoleById(id));
         }
 
-       
         [HttpPost]
-        public ActionResult Edit(Role editeRole)
+        public ActionResult Edit(Role roleToEdit)
         {
-            try
+            if (ModelState.IsValid)
             {
-                this.businessLayer.EditRole(editeRole);
+                try
+                {
+                    this.businessLayer.EditRole(roleToEdit);
 
-                return RedirectToAction("Roles", "Admin");
+                    return RedirectToAction("Roles", "Admin");
+                }
+                catch(Exception ex)
+                {
+                    Log4NetHandler.Log.Error("The Role doesn't edited" + ex.Message);
+
+                    return View();
+                }
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
-       
         public ActionResult Delete(int id)
         {
             return View(this.businessLayer.GetRoleById(id));
         }
 
-        
         [HttpPost]
-        public ActionResult Delete(Role deleteRole)
+        public ActionResult Delete(Role roleToDelete)
         {
             try
             {
-                this.businessLayer.DeleteRole(deleteRole);
+                this.businessLayer.DeleteRole(roleToDelete);
 
                 return RedirectToAction("Roles", "Admin");
-
             }
-            catch
+            catch(Exception ex)
             {
+                Log4NetHandler.Log.Error("The Role doesn't deleted" + ex.Message);
+
                 return View();
             }
         }

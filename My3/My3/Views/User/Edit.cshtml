@@ -22,13 +22,13 @@
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.ID)
+            @Html.HiddenFor(model => model.ConfirmPassword)
 
-           
 
             <div class="form-group">
                 @Html.LabelFor(model => model.Role, "Role", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @readonly = "readonly" } })
+                    @Html.EditorFor(model => model.Role, new { htmlAttributes = new { @class = "text-danger" } })
                     @Html.ValidationMessageFor(model => model.Role)
                 </div>
             </div>
@@ -41,8 +41,8 @@
                 </div>
             </div>
 
-            
-            
+
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Name, "Name", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -55,7 +55,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10 name">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @readonly = "readonly" } })
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -71,8 +71,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.AddedDate, "AddedDate", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.AddedDate, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.AddedDate, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.AddedDate, new { htmlAttributes = new { @readonly = "readonly" } })
                 </div>
             </div>
 
@@ -80,7 +79,6 @@
                 @Html.LabelFor(model => model.PhoneNumber, "PhoneNumber", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -88,12 +86,11 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Save" onclick="location.href='@Url.Action("Edit","User",new { id = Model.ID })'" class="btn btn-default" />
-                    <input type="button" value="Back to List" onclick="location.href='@Url.Action("Users","Admin")'" class="btn btn-default" />
                 </div>
             </div>
         </div>
     }
 
-   
+
 </body>
 </html>

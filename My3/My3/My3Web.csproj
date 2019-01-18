@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -108,6 +116,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -175,6 +187,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\StructuremapMvc.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\EventController.cs" />
@@ -191,7 +204,9 @@
     </Compile>
     <Compile Include="IErrorHandler.cs" />
     <Compile Include="Log4NetHandler.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\CustomRoleProvider.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,12 +219,16 @@
     <Content Include="Content\CategoryDetailsForm.css" />
     <Content Include="Content\daterangepicker.css" />
     <Content Include="Content\EntranceForm.css" />
+    <Content Include="Content\EventCreateForm.css" />
+    <Content Include="Content\EventDetailsFormFromAdmin.css" />
+    <Content Include="Content\EventEditFormFromUser.css" />
     <Content Include="Content\Picture\back.jpg" />
     <Content Include="Content\Picture\background.jpg" />
     <Content Include="Content\Picture\background1.jpg" />
     <Content Include="Content\Picture\background2.jpg" />
     <Content Include="Content\Picture\backgroundmain.jpg" />
     <Content Include="Content\EventDetailsForm.css" />
+    <Content Include="Content\EventEditFormFromAdmin.css" />
     <Content Include="Content\Picture\logo.png" />
     <Content Include="Content\Picture\logoEVENT.png" />
     <Content Include="Content\Picture\slider1.jpg" />
@@ -253,7 +272,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -264,8 +285,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <None Include="Service References\ServiceReference1\WeatherWebService.wsdl" />
@@ -275,8 +294,7 @@
     <None Include="Service References\ServiceReference1\WeatherWebService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\User\Entrance.cshtml" />
-    <Content Include="Views\User\Rgister.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Event\Details.cshtml" />
     <Content Include="Views\Event\View.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
@@ -298,10 +316,22 @@
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
     <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\Events.cshtml" />
+    <Content Include="Views\Event\Search.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Delete.cshtml" />
+    <Content Include="Views\User\Events.cshtml" />
+    <Content Include="Views\Admin\SearchUsers.cshtml" />
+    <Content Include="Views\User\Search.cshtml" />
+    <Content Include="Views\Event\SearchFromAdmin.cshtml" />
+    <Content Include="Views\User\UserEditEvent.cshtml" />
+    <Content Include="Views\User\DeleteUserDeleteEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

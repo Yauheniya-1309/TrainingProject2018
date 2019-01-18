@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My3DataAccess", "My3DataAcc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherWCFService", "WeatherWCFService\WeatherWCFService.csproj", "{D3F41C5F-8A8F-4B52-B2B6-D6117DC77AF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My3.Test", "My3.Test\My3.Test.csproj", "{8CEFEAFC-3C9B-430E-BF23-9E4BDF318E14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{D3F41C5F-8A8F-4B52-B2B6-D6117DC77AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3F41C5F-8A8F-4B52-B2B6-D6117DC77AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3F41C5F-8A8F-4B52-B2B6-D6117DC77AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CEFEAFC-3C9B-430E-BF23-9E4BDF318E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CEFEAFC-3C9B-430E-BF23-9E4BDF318E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CEFEAFC-3C9B-430E-BF23-9E4BDF318E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CEFEAFC-3C9B-430E-BF23-9E4BDF318E14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

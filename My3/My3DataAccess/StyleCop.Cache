@@ -1,0 +1,1031 @@
+<stylecopresultscache>
+  <version>12</version>
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.01.15 13:30:27.337</styleCop>
+      <settingsFile>2019.01.15 13:36:28.480</settingsFile>
+      <sourceFile>2018.12.03 13:56:55.482</sourceFile>
+      <parser>2019.01.15 13:30:27.337</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.01.15 13:30:27.337</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1592452801</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.01.15 13:30:27.337</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="IDataAccessLayer.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.01.15 13:30:27.337</styleCop>
+      <settingsFile>2019.01.15 13:36:28.480</settingsFile>
+      <sourceFile>2019.01.15 15:21:59.869</sourceFile>
+      <parser>2019.01.15 13:30:27.337</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.01.15 13:30:27.337</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1592452801</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.01.15 13:30:27.337</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="DataAccessLayer.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.01.15 13:30:27.337</styleCop>
+      <settingsFile>2019.01.15 13:36:28.480</settingsFile>
+      <sourceFile>2019.01.15 15:37:47.366</sourceFile>
+      <parser>2019.01.15 13:30:27.337</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.01.15 13:30:27.337</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1592452801</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.01.15 13:30:27.337</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainBlankLinesAtEndOfFile" ruleCheckId="SA1518">
+        <context>The code must not contain blank lines at the end of the file.</context>
+        <line>849</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>849</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>551</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="CodeMustNotContainMultipleBlankLinesInARow" ruleCheckId="SA1507">
+        <context>The code must not contain multiple blank lines in a row.</context>
+        <line>713</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>847</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
+        <context>Variable names and private field names must start with a lower-case letter: ConnectionString.</context>
+        <line>19</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>34</line>
+        <index>981</index>
+        <endIndex>992</endIndex>
+        <startLine>34</startLine>
+        <startColumn>17</startColumn>
+        <endLine>34</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>53</line>
+        <index>1808</index>
+        <endIndex>1819</endIndex>
+        <startLine>53</startLine>
+        <startColumn>21</startColumn>
+        <endLine>53</endLine>
+        <endColumn>32</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>72</line>
+        <index>2347</index>
+        <endIndex>2358</endIndex>
+        <startLine>72</startLine>
+        <startColumn>17</startColumn>
+        <endLine>72</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>92</line>
+        <index>3189</index>
+        <endIndex>3200</endIndex>
+        <startLine>92</startLine>
+        <startColumn>17</startColumn>
+        <endLine>92</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>131</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>133</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>108</line>
+        <index>3732</index>
+        <endIndex>3743</endIndex>
+        <startLine>108</startLine>
+        <startColumn>34</startColumn>
+        <endLine>108</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>113</line>
+        <index>3916</index>
+        <endIndex>3927</endIndex>
+        <startLine>113</startLine>
+        <startColumn>17</startColumn>
+        <endLine>113</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>135</line>
+        <index>4762</index>
+        <endIndex>4773</endIndex>
+        <startLine>135</startLine>
+        <startColumn>17</startColumn>
+        <endLine>135</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>182</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>149</line>
+        <index>5218</index>
+        <endIndex>5229</endIndex>
+        <startLine>149</startLine>
+        <startColumn>34</startColumn>
+        <endLine>149</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>154</line>
+        <index>5343</index>
+        <endIndex>5354</endIndex>
+        <startLine>154</startLine>
+        <startColumn>17</startColumn>
+        <endLine>154</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>158</line>
+        <index>5438</index>
+        <endIndex>5449</endIndex>
+        <startLine>158</startLine>
+        <startColumn>17</startColumn>
+        <endLine>158</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>164</line>
+        <index>5687</index>
+        <endIndex>5698</endIndex>
+        <startLine>164</startLine>
+        <startColumn>34</startColumn>
+        <endLine>164</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>176</line>
+        <index>6324</index>
+        <endIndex>6335</endIndex>
+        <startLine>176</startLine>
+        <startColumn>17</startColumn>
+        <endLine>176</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>180</line>
+        <index>6425</index>
+        <endIndex>6436</endIndex>
+        <startLine>180</startLine>
+        <startColumn>17</startColumn>
+        <endLine>180</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>186</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>216</line>
+        <index>7539</index>
+        <endIndex>7550</endIndex>
+        <startLine>216</startLine>
+        <startColumn>34</startColumn>
+        <endLine>216</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>221</line>
+        <index>7663</index>
+        <endIndex>7674</endIndex>
+        <startLine>221</startLine>
+        <startColumn>17</startColumn>
+        <endLine>221</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>225</line>
+        <index>7758</index>
+        <endIndex>7769</endIndex>
+        <startLine>225</startLine>
+        <startColumn>17</startColumn>
+        <endLine>225</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>231</line>
+        <index>8000</index>
+        <endIndex>8011</endIndex>
+        <startLine>231</startLine>
+        <startColumn>34</startColumn>
+        <endLine>231</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>242</line>
+        <index>8559</index>
+        <endIndex>8570</endIndex>
+        <startLine>242</startLine>
+        <startColumn>17</startColumn>
+        <endLine>242</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>246</line>
+        <index>8660</index>
+        <endIndex>8671</endIndex>
+        <startLine>246</startLine>
+        <startColumn>17</startColumn>
+        <endLine>246</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
+        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>311</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="StatementMustNotUseUnnecessaryParenthesis" ruleCheckId="SA1119">
+        <context>The line contains unnecessary parenthesis.</context>
+        <line>312</line>
+        <index>11165</index>
+        <endIndex>11261</endIndex>
+        <startLine>312</startLine>
+        <startColumn>38</startColumn>
+        <endLine>312</endLine>
+        <endColumn>134</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
+        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>352</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="StatementMustNotUseUnnecessaryParenthesis" ruleCheckId="SA1119">
+        <context>The line contains unnecessary parenthesis.</context>
+        <line>353</line>
+        <index>12796</index>
+        <endIndex>12892</endIndex>
+        <startLine>353</startLine>
+        <startColumn>38</startColumn>
+        <endLine>353</endLine>
+        <endColumn>134</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>331</line>
+        <index>11844</index>
+        <endIndex>11855</endIndex>
+        <startLine>331</startLine>
+        <startColumn>34</startColumn>
+        <endLine>331</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>336</line>
+        <index>11955</index>
+        <endIndex>11966</endIndex>
+        <startLine>336</startLine>
+        <startColumn>17</startColumn>
+        <endLine>336</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>359</line>
+        <index>13000</index>
+        <endIndex>13011</endIndex>
+        <startLine>359</startLine>
+        <startColumn>17</startColumn>
+        <endLine>359</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>352</line>
+        <index>12720</index>
+        <endIndex>12756</endIndex>
+        <startLine>352</startLine>
+        <startColumn>25</startColumn>
+        <endLine>352</endLine>
+        <endColumn>61</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>366</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="SingleLineCommentMustBePrecededByBlankLine" ruleCheckId="SA1515">
+        <context>A single-line comment must be preceded by a blank line or another single-line comment, or must be the first item in its scope. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>394</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.MaintainabilityRules" rule="StatementMustNotUseUnnecessaryParenthesis" ruleCheckId="SA1119">
+        <context>The line contains unnecessary parenthesis.</context>
+        <line>397</line>
+        <index>14386</index>
+        <endIndex>14488</endIndex>
+        <startLine>397</startLine>
+        <startColumn>41</startColumn>
+        <endLine>397</endLine>
+        <endColumn>143</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>378</line>
+        <index>13495</index>
+        <endIndex>13506</endIndex>
+        <startLine>378</startLine>
+        <startColumn>17</startColumn>
+        <endLine>378</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>401</line>
+        <index>14552</index>
+        <endIndex>14563</endIndex>
+        <startLine>401</startLine>
+        <startColumn>17</startColumn>
+        <endLine>401</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>394</line>
+        <index>14284</index>
+        <endIndex>14313</endIndex>
+        <startLine>394</startLine>
+        <startColumn>29</startColumn>
+        <endLine>394</endLine>
+        <endColumn>58</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>465</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
+        <context>Variable names and private field names must start with a lower-case letter: PictureCategory.</context>
+        <line>442</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>417</line>
+        <index>15059</index>
+        <endIndex>15070</endIndex>
+        <startLine>417</startLine>
+        <startColumn>34</startColumn>
+        <endLine>417</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>426</line>
+        <index>15402</index>
+        <endIndex>15413</endIndex>
+        <startLine>426</startLine>
+        <startColumn>34</startColumn>
+        <endLine>426</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>431</line>
+        <index>15531</index>
+        <endIndex>15542</endIndex>
+        <startLine>431</startLine>
+        <startColumn>17</startColumn>
+        <endLine>431</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>437</line>
+        <index>15675</index>
+        <endIndex>15686</endIndex>
+        <startLine>437</startLine>
+        <startColumn>17</startColumn>
+        <endLine>437</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to GetCategoryById must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>442</line>
+        <index>15839</index>
+        <endIndex>15853</endIndex>
+        <startLine>442</startLine>
+        <startColumn>38</startColumn>
+        <endLine>442</endLine>
+        <endColumn>52</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>526</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.NamingRules" rule="FieldNamesMustBeginWithLowerCaseLetter" ruleCheckId="SA1306">
+        <context>Variable names and private field names must start with a lower-case letter: PictureCategory.</context>
+        <line>502</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>477</line>
+        <index>17137</index>
+        <endIndex>17148</endIndex>
+        <startLine>477</startLine>
+        <startColumn>34</startColumn>
+        <endLine>477</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>486</line>
+        <index>17483</index>
+        <endIndex>17494</endIndex>
+        <startLine>486</startLine>
+        <startColumn>34</startColumn>
+        <endLine>486</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>491</line>
+        <index>17615</index>
+        <endIndex>17626</endIndex>
+        <startLine>491</startLine>
+        <startColumn>17</startColumn>
+        <endLine>491</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>497</line>
+        <index>17759</index>
+        <endIndex>17770</endIndex>
+        <startLine>497</startLine>
+        <startColumn>17</startColumn>
+        <endLine>497</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to GetCategoryById must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>502</line>
+        <index>17923</index>
+        <endIndex>17937</endIndex>
+        <startLine>502</startLine>
+        <startColumn>38</startColumn>
+        <endLine>502</endLine>
+        <endColumn>52</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>538</line>
+        <index>19357</index>
+        <endIndex>19368</endIndex>
+        <startLine>538</startLine>
+        <startColumn>38</startColumn>
+        <endLine>538</endLine>
+        <endColumn>49</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>542</line>
+        <index>19492</index>
+        <endIndex>19503</endIndex>
+        <startLine>542</startLine>
+        <startColumn>21</startColumn>
+        <endLine>542</endLine>
+        <endColumn>32</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>546</line>
+        <index>19582</index>
+        <endIndex>19593</endIndex>
+        <startLine>546</startLine>
+        <startColumn>21</startColumn>
+        <endLine>546</endLine>
+        <endColumn>32</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>570</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>560</line>
+        <index>20075</index>
+        <endIndex>20086</endIndex>
+        <startLine>560</startLine>
+        <startColumn>38</startColumn>
+        <endLine>560</endLine>
+        <endColumn>49</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>564</line>
+        <index>20200</index>
+        <endIndex>20211</endIndex>
+        <startLine>564</startLine>
+        <startColumn>21</startColumn>
+        <endLine>564</endLine>
+        <endColumn>32</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>568</line>
+        <index>20290</index>
+        <endIndex>20301</endIndex>
+        <startLine>568</startLine>
+        <startColumn>21</startColumn>
+        <endLine>568</endLine>
+        <endColumn>32</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>600</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>583</line>
+        <index>20756</index>
+        <endIndex>20767</endIndex>
+        <startLine>583</startLine>
+        <startColumn>34</startColumn>
+        <endLine>583</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>587</line>
+        <index>20865</index>
+        <endIndex>20876</endIndex>
+        <startLine>587</startLine>
+        <startColumn>17</startColumn>
+        <endLine>587</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>603</line>
+        <index>21371</index>
+        <endIndex>21382</endIndex>
+        <startLine>603</startLine>
+        <startColumn>17</startColumn>
+        <endLine>603</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>612</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>631</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>618</line>
+        <index>21825</index>
+        <endIndex>21836</endIndex>
+        <startLine>618</startLine>
+        <startColumn>34</startColumn>
+        <endLine>618</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>625</line>
+        <index>22091</index>
+        <endIndex>22102</endIndex>
+        <startLine>625</startLine>
+        <startColumn>17</startColumn>
+        <endLine>625</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>629</line>
+        <index>22192</index>
+        <endIndex>22203</endIndex>
+        <startLine>629</startLine>
+        <startColumn>17</startColumn>
+        <endLine>629</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>637</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>643</line>
+        <index>22623</index>
+        <endIndex>22634</endIndex>
+        <startLine>643</startLine>
+        <startColumn>34</startColumn>
+        <endLine>643</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>648</line>
+        <index>22747</index>
+        <endIndex>22758</endIndex>
+        <startLine>648</startLine>
+        <startColumn>17</startColumn>
+        <endLine>648</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>652</line>
+        <index>22849</index>
+        <endIndex>22860</endIndex>
+        <startLine>652</startLine>
+        <startColumn>17</startColumn>
+        <endLine>652</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>659</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>679</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>665</line>
+        <index>23273</index>
+        <endIndex>23284</endIndex>
+        <startLine>665</startLine>
+        <startColumn>34</startColumn>
+        <endLine>665</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>672</line>
+        <index>23467</index>
+        <endIndex>23478</endIndex>
+        <startLine>672</startLine>
+        <startColumn>17</startColumn>
+        <endLine>672</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>676</line>
+        <index>23560</index>
+        <endIndex>23571</endIndex>
+        <startLine>676</startLine>
+        <startColumn>17</startColumn>
+        <endLine>676</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>691</line>
+        <index>23970</index>
+        <endIndex>23981</endIndex>
+        <startLine>691</startLine>
+        <startColumn>17</startColumn>
+        <endLine>691</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>707</line>
+        <index>24473</index>
+        <endIndex>24484</endIndex>
+        <startLine>707</startLine>
+        <startColumn>17</startColumn>
+        <endLine>707</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>740</line>
+        <index>25463</index>
+        <endIndex>25474</endIndex>
+        <startLine>740</startLine>
+        <startColumn>17</startColumn>
+        <endLine>740</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="ClosingCurlyBracketsMustNotBePrecededByBlankLine" ruleCheckId="SA1508">
+        <context>A closing curly bracket must not be preceded by a blank line.</context>
+        <line>771</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>758</line>
+        <index>25977</index>
+        <endIndex>25988</endIndex>
+        <startLine>758</startLine>
+        <startColumn>17</startColumn>
+        <endLine>758</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>774</line>
+        <index>26505</index>
+        <endIndex>26516</endIndex>
+        <startLine>774</startLine>
+        <startColumn>17</startColumn>
+        <endLine>774</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>783</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>789</line>
+        <index>26981</index>
+        <endIndex>26992</endIndex>
+        <startLine>789</startLine>
+        <startColumn>34</startColumn>
+        <endLine>789</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>794</line>
+        <index>27108</index>
+        <endIndex>27119</endIndex>
+        <startLine>794</startLine>
+        <startColumn>17</startColumn>
+        <endLine>794</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>798</line>
+        <index>27201</index>
+        <endIndex>27212</endIndex>
+        <startLine>798</startLine>
+        <startColumn>17</startColumn>
+        <endLine>798</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>811</line>
+        <index>27682</index>
+        <endIndex>27693</endIndex>
+        <startLine>811</startLine>
+        <startColumn>34</startColumn>
+        <endLine>811</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>817</line>
+        <index>27892</index>
+        <endIndex>27903</endIndex>
+        <startLine>817</startLine>
+        <startColumn>17</startColumn>
+        <endLine>817</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>821</line>
+        <index>27993</index>
+        <endIndex>28004</endIndex>
+        <startLine>821</startLine>
+        <startColumn>17</startColumn>
+        <endLine>821</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.SpacingRules" rule="SingleLineCommentsMustBeginWithSingleSpace" ruleCheckId="SA1005">
+        <context>The comment must start with a single space. To ignore this error when commenting out a line of code, begin the comment with '////' rather than '//'.</context>
+        <line>806</line>
+        <index>27435</index>
+        <endIndex>27456</endIndex>
+        <startLine>806</startLine>
+        <startColumn>17</startColumn>
+        <endLine>806</endLine>
+        <endColumn>38</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.LayoutRules" rule="OpeningCurlyBracketsMustNotBeFollowedByBlankLine" ruleCheckId="SA1505">
+        <context>An opening curly bracket must not be followed by a blank line.</context>
+        <line>828</line>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>834</line>
+        <index>28438</index>
+        <endIndex>28449</endIndex>
+        <startLine>834</startLine>
+        <startColumn>34</startColumn>
+        <endLine>834</endLine>
+        <endColumn>45</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>839</line>
+        <index>28574</index>
+        <endIndex>28585</endIndex>
+        <startLine>839</startLine>
+        <startColumn>17</startColumn>
+        <endLine>839</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="StyleCop.CSharp.ReadabilityRules" rule="PrefixLocalCallsWithThis" ruleCheckId="SA1101">
+        <context>The call to myConnection must begin with the 'this.' prefix to indicate that the item is a member of the class.</context>
+        <line>843</line>
+        <index>28676</index>
+        <endIndex>28687</endIndex>
+        <startLine>843</startLine>
+        <startColumn>17</startColumn>
+        <endLine>843</endLine>
+        <endColumn>28</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <project key="-1021018939">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="DARegistry.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019.01.15 13:30:27.337</styleCop>
+      <settingsFile>2019.01.15 13:36:28.480</settingsFile>
+      <sourceFile>2019.01.15 15:41:34.736</sourceFile>
+      <parser>2019.01.15 13:30:27.337</parser>
+      <StyleCop.CSharp.DocumentationRules>2019.01.15 13:30:27.337</StyleCop.CSharp.DocumentationRules>
+      <StyleCop.CSharp.DocumentationRules.FilesHashCode>-1592452801</StyleCop.CSharp.DocumentationRules.FilesHashCode>
+      <StyleCop.CSharp.LayoutRules>2019.01.15 13:30:27.337</StyleCop.CSharp.LayoutRules>
+      <StyleCop.CSharp.LayoutRules.FilesHashCode>0</StyleCop.CSharp.LayoutRules.FilesHashCode>
+      <StyleCop.CSharp.MaintainabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.MaintainabilityRules>
+      <StyleCop.CSharp.MaintainabilityRules.FilesHashCode>0</StyleCop.CSharp.MaintainabilityRules.FilesHashCode>
+      <StyleCop.CSharp.NamingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.NamingRules>
+      <StyleCop.CSharp.NamingRules.FilesHashCode>0</StyleCop.CSharp.NamingRules.FilesHashCode>
+      <StyleCop.CSharp.OrderingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.OrderingRules>
+      <StyleCop.CSharp.OrderingRules.FilesHashCode>0</StyleCop.CSharp.OrderingRules.FilesHashCode>
+      <StyleCop.CSharp.ReadabilityRules>2019.01.15 13:30:27.337</StyleCop.CSharp.ReadabilityRules>
+      <StyleCop.CSharp.ReadabilityRules.FilesHashCode>0</StyleCop.CSharp.ReadabilityRules.FilesHashCode>
+      <StyleCop.CSharp.SpacingRules>2019.01.15 13:30:27.337</StyleCop.CSharp.SpacingRules>
+      <StyleCop.CSharp.SpacingRules.FilesHashCode>0</StyleCop.CSharp.SpacingRules.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>

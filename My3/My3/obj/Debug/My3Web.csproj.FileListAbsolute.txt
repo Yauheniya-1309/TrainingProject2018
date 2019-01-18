@@ -73,3 +73,9 @@ D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.Net4.dll
 D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.pdb
 D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.xml
 D:\Epam\MY_PROJECT\My3\My3\bin\StructureMap.Net4.pdb
+D:\Epam\MY_PROJECT\My3\My3\bin\EntityFramework.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\EntityFramework.SqlServer.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\System.Web.Providers.dll
+D:\Epam\MY_PROJECT\My3\My3\bin\EntityFramework.xml
+D:\Epam\MY_PROJECT\My3\My3\bin\EntityFramework.SqlServer.xml
+D:\Epam\MY_PROJECT\My3\My3\bin\System.Web.Providers.xml

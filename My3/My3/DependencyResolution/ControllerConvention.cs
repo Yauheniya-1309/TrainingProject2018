@@ -18,7 +18,6 @@
 namespace My3.DependencyResolution {
     using System;
     using System.Web.Mvc;
-
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
     using StructureMap.Pipeline;
@@ -32,7 +31,6 @@ namespace My3.DependencyResolution {
                 registry.For(type).LifecycleIs(new UniquePerRequestLifecycle());
             }
         }
-
-        #endregion
+       #endregion
     }
 }

@@ -25,25 +25,36 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Бренд или название сайта (отображается в левой части меню) -->
-                <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/Picture/logoEVENT.png" width="50" /></a>
+                <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/Picture/logoEVENT.png" width="100" /></a>
             </div>
             <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
             <div class="collapse navbar-collapse" id="navbar-main">
                 <!-- Содержимое основной части -->
-                <ul class="nav navbar-nav">
-                    <li><a href="~/Admin/Events">Events</a></li>
-                    <li><a href="~/Admin/Users">Users</a></li>
-                    <li><a href="~/Admin/Categories">Categories</a></li>
-                    <li><a href="~/Admin/Roles">Roles</a></li>
 
-
-                </ul>
+                <a href='@Url.Action("Index","Home")'><button type="button" class="btn btn-success navbar-btn">ALL</button></a>
+                <a href='@Url.Action("Film","Home")'><button type="button" class="btn btn-info navbar-btn">Film</button></a>
+                <a href='@Url.Action("Music","Home")'><button type="button" class="btn btn-danger navbar-btn">Music</button></a>
+                <a href='@Url.Action("Sports","Home")'><button type="button" class="btn btn-warning navbar-btn">Sports</button></a>
+                <a href='@Url.Action("Theatre","Home")'><button type="button" class="btn btn-primary navbar-btn">Theatre</button></a>
+                <a href='@Url.Action("Exhibition","Home")'><button type="button" class="btn btn-warning navbar-btn">Exhibition</button></a>
+                <a href='@Url.Action("Family","Home")'><button type="button" class="btn btn-danger navbar-btn">Family</button></a>
+                <a href='@Url.Action("Party","Home")'><button type="button" class="btn btn-info navbar-btn">Party</button></a>
 
 
                 <div class="nav navbar-nav navbar-right">
 
-                    <a href="~/User/Entrance/"><button type="button" class="btn btn-default navbar-btn">Войти</button></a>
-                    <a href="~/User/Register/"><button type="button" class="btn btn-info navbar-btn">Регистрация</button></a>
+                    @{if (@User.Identity.IsAuthenticated == false)
+
+                        { <a href="~/Account/Login/"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
+                        <a href="~/Account/Register/"><button type="button" class="btn btn-info navbar-btn">Register</button></a>
+                        }
+                        else
+                        {
+                            @User.Identity.Name
+                            <a href="~/Account/Logoff/"><button type="button" class="btn btn-info navbar-btn">Logout</button></a>
+
+                        }
+                    }
                 </div>
             </div>
         </div>
@@ -53,10 +64,17 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="jumbotron"> </div>
+                <div class="jumbotron">
+
+                    <div class="card-body zzz"><h3 class="text-center">@ViewBag.Weather</h3></div>
+                    <h2 class="card-body zzz">@ViewBag.Time</h2>
+                    <p> </p>
+                </div>
             </div>
         </div>
     </div>
+
+
 
 
     <div class="container">

@@ -13,12 +13,33 @@
 </head>
 <body>
     <p>
-        <input type="button" value="Create New Event" onclick="location.href='@Url.Action("Create","Event")'" class="btn btn-default" />
+       <nav class="navbar navbar-expand-lg">
 
+            <div class="container">
+                <input type="button" value="Back to Main" onclick="location.href='@Url.Action("Index","Home")'" class="btn btn-info" />
+
+                <div class="nav navbar-collapse  navbar-right" id="navbar-user-search">
+                    @*<form class="navbar-form  form-inline" role="search" name="search">*@
+                    @using (Html.BeginForm("SearchFromAdmin", "Event", FormMethod.Post))
+                    {
+
+                        <input type="text" id="searchEvent" class="form-control" placeholder="Event" name="searchEvent" style="display:inline">
+
+                        <!--  <button class="btn btn-success" id="my_input_submit" type="submit">Search</button> -->
+                        <a href='@Url.Action("SearchFromAdmin", "Event")'><button type="submit" class="btn btn-success navbar-btn">Search</button></a>
+                        <a href='@Url.Action("Events", "Admin","search")'><button type="button" class="btn btn-danger navbar-btn">Show All</button></a>
+
+                    }
+
+                    @*</form>*@
+                </div>
+            </div>
+        </nav>
     </p>
+
     <table class="table">
         <tr>
-            
+
             <th>
                 @Html.DisplayNameFor(model => model.ID)
             </th>
@@ -26,7 +47,7 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CategoryID)
+                @Html.DisplayNameFor(model => model.Category)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Place)
@@ -40,42 +61,48 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-           
+
             <th></th>
         </tr>
-    
-    @foreach (var item in @ViewBag.events) {
-        <tr>
-            <td>
-                @item.ID
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.CategoryID
-            </td>
-            <td>
-                @item.Place
-            </td>
-            <td>
-                @item.UserName
-            </td>
-            <td>
-                @item.Date
-            </td>
-            <td>
-                @item.Description
-            </td>
-           
-            <td >
-                @Html.ActionLink("Edit", "Edit","Event", new { id = item.ID },null)
-                @Html.ActionLink("Details", "Details","Event", new { id=item.ID },null)
-                @Html.ActionLink("Delete", "Delete","Event", new { id=item.ID },null)
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in @ViewBag.events)
+        {
+            <tr>
+                <td>
+                    @item.ID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Category
+                </td>
+                <td>
+                    @item.Place
+                </td>
+                <td>
+                    @item.UserName
+                </td>
+                <td>
+                    @item.Date
+                </td>
+                <td>
+                    @item.Description
+                </td>
+
+                <td>
+                    @{if (item.Date > DateTime.Now)
+                        {
+                            @Html.ActionLink("Edit", "Edit", "Event", new { id = item.ID }, null)
+                            <p>@Html.ActionLink("Delete", "Delete", "Event", new { id = item.ID }, null)</p>
+
+                        }
+                    }
+                    @*@Html.ActionLink("Details", "Details", "Event", new { id = item.ID }, null)*@
+                   </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

@@ -13,8 +13,33 @@
 </head>
 <body>
     <p>
-        <input type="button" value="Create New User" onclick="location.href='@Url.Action("Create","User")'" class="btn btn-default" />
-   </p>
+      
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+                <input type="button" value="Create New User" onclick="location.href='@Url.Action("Create","User")'" class="btn btn-info" />
+                <input type="button" value="Back to Main" onclick="location.href='@Url.Action("Index","Home")'" class="btn btn-info" />
+
+               <div class="nav navbar-collapse  navbar-right" id="navbar-user-search">
+                    @*<form class="navbar-form  form-inline" role="search" name="search">*@
+                    @using (Html.BeginForm("Search", "User", FormMethod.Post))
+                    {
+
+                        <input type="text" id="searchUser" class="form-control" placeholder="Name/Email" name="searchUser" style="display:inline">
+
+                        <!--  <button class="btn btn-success" id="my_input_submit" type="submit">Search</button> -->
+                        <a href='@Url.Action("Search", "User")'><button type="submit" class="btn btn-success navbar-btn">Search</button></a>
+                        <a href='@Url.Action("Users", "Admin","search")'><button type="button" class="btn btn-danger navbar-btn">Show All</button></a>
+
+                    }
+
+                    @*</form>*@
+                </div>
+            </div>
+        </nav>
+
+
+    </p>
     <table class="table">
         <tr>
             <th>
@@ -43,41 +68,46 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in @ViewBag.users) {
-        <tr>
-            <td>
-                @item.ID
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @item.Email
-            </td>
-            <td>
-                @item.Password
-            </td>
-            <td>
-                @item.AddedDate
-            </td>
-            <td>
-                @item.PhoneNumber
-            </td>
-            <td>
-                @item.Role
-            </td>
-            <td>
-                @item.Login
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", "User",new { id=item.ID },null) |
-                @Html.ActionLink("Details", "Details", "User", new { id=item.ID },null) |
-                @Html.ActionLink("Delete", "Delete", "User", new { id=item.ID },null)
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in @ViewBag.users)
+        {
+            <tr>
+                <td>
+                    @item.ID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Password
+                </td>
+                <td>
+                    @item.AddedDate
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+                <td>
+                    @item.Role
+                </td>
+                <td>
+                    @item.Login
+                </td>
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", "User", new { id = item.ID }, null) |
+                    @Html.ActionLink("Details", "Details", "User", new { id = item.ID }, null) |
+                    @Html.ActionLink("Delete", "Delete", "User", new { id = item.ID }, null) |
+                    @Html.ActionLink("Events", "Events", "User", new { id = item.ID }, null)
+
+
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

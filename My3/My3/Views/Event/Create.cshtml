@@ -9,14 +9,15 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/Content/EventDetailsForm.css">
+    <link rel="stylesheet" href="~/Content/EventCreateForm.css">
+
     <title>Create</title>
 </head>
 <body>
     @using (Html.BeginForm(new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
-        
+
         <div class="form-horizontal">
             <h4>Event</h4>
             <hr />
@@ -28,7 +29,7 @@
                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Place, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -36,15 +37,7 @@
                     @Html.ValidationMessageFor(model => model.Place, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -52,7 +45,32 @@
                     @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
+
+
+
+            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="form-group mycontainer">
+                <div class="col-md-10">
+
+                    <div class="btn-group button" data-toggle="buttons" style="padding-bottom:10px">
+                        <p>    @Html.RadioButtonFor(model => model.Category, "Film", new { name = "Category" }) Film</p>
+                        <p> @Html.RadioButtonFor(model => model.Category, "Music", new { name = "Category" }) Music</p>
+
+                        <p>@Html.RadioButtonFor(model => model.Category, "Family", new { name = "Category" }) Family</p>
+                        <p> @Html.RadioButtonFor(model => model.Category, "Exhibition", new { name = "Category" }) Exhibition</p>
+
+
+                        <p>@Html.RadioButtonFor(model => model.Category, "Theatre", new { name = "Category" }) Theatre</p>
+                        <p>@Html.RadioButtonFor(model => model.Category, "Sports", new { name = "Category" }) Sports</p>
+                        <p>@Html.RadioButtonFor(model => model.Category, "Party", new { name = "Category" }) Party</p>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+
             <div class="form-group">
                 @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -60,18 +78,6 @@
                     @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownListFor(model => model.CategoryID, new SelectList(Model.Categories, "CategoryID", "Name"), "Select Category", new { @class = "form-control" })
-
-                   @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-
-
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
@@ -82,7 +88,6 @@
             </div>
         </div>
     }
-    
-    
+
 </body>
 </html>

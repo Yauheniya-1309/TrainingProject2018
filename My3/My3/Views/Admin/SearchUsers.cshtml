@@ -1,0 +1,113 @@
+﻿@model IEnumerable<My3Common.User>
+
+@{
+    Layout = "~/Views/Shared/_LayoutForTableAdmin.cshtml"; ;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Users</title>
+</head>
+<body>
+    <p>
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+                <input type="button" value="Create New User" onclick="location.href='@Url.Action("Create","User")'" class="btn btn-info" />
+                <input type="button" value="Back to Main" onclick="location.href='@Url.Action("Index","Home")'" class="btn btn-info" />
+
+                <div class="nav navbar-collapse  navbar-right" id="navbar-user-search">
+                    @*<form class="navbar-form  form-inline" role="search" name="search">*@
+                    @using (Html.BeginForm("Search", "Event", FormMethod.Post))
+                    {
+
+                        <input type="text" id="searchUser" class="form-control" placeholder="Name/Email" name="searchUser" style="display:inline">
+
+                        <!--  <button class="btn btn-success" id="my_input_submit" type="submit">Search</button> -->
+                        <a href='@Url.Action("Search", "User", "search")'><button type="submit" class="btn btn-success navbar-btn">Search</button></a>
+                        <a href='@Url.Action("Users", "Admin")'><button type="button" class="btn btn-danger navbar-btn">Cancel</button></a>
+
+                    }
+
+                    @*</form>*@
+                </div>
+            </div>
+        </nav>
+
+
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in @ViewBag.users)
+        {
+            <tr>
+                <td>
+                    @item.ID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Password
+                </td>
+                <td>
+                    @item.AddedDate
+                </td>
+                <td>
+                    @item.PhoneNumber
+                </td>
+                <td>
+                    @item.Role
+                </td>
+                <td>
+                    @item.Login
+                </td>
+                <td>
+
+                    @Html.ActionLink("Edit", "Edit", "User", new { id = item.ID }, null) |
+                    @Html.ActionLink("Details", "Details", "User", new { id = item.ID }, null) |
+                    @Html.ActionLink("Delete", "Delete", "User", new { id = item.ID }, null) |
+                    @Html.ActionLink("Events", "Events", "User", new { id = item.ID }, null)
+
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

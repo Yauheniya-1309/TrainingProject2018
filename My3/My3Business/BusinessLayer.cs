@@ -1,21 +1,21 @@
-﻿//using My3Business.ServiceReference1;
-using My3Business.ServiceReference1;
-using My3Common;
-using My3DataAccess;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace My3Business
+﻿namespace My3Business
 {
+    #region Using
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using My3Business.ServiceReference1;
+    using My3Common;
+    using My3DataAccess;
+    #endregion
+
     public class BusinessLayer : IBusinessLayer
     {
         public IDataAccessLayer dataAccessLayer;
 
-        public  WeatherWebServiceClient client = new WeatherWebServiceClient();
+        public WeatherWebServiceClient client = new WeatherWebServiceClient();
 
         public BusinessLayer(IDataAccessLayer dataAccessLayer)
         {
@@ -24,13 +24,10 @@ namespace My3Business
 
         public string DoWeather()
         {
-         return this.client.DoWork();
+            return this.client.DoWork();
         }
 
-
-
-
-
+        #region Category
         public Category GetCategoryById(int id)
         {
             return this.dataAccessLayer.GetCategoryById(id);
@@ -46,19 +43,19 @@ namespace My3Business
             this.dataAccessLayer.AddCategory(newCategory);
         }
 
-        public void EditCategory(Category editCategory)
+        public void EditCategory(Category categoryToEdit)
         {
-            this.dataAccessLayer.EditCategory(editCategory);
+            this.dataAccessLayer.EditCategory(categoryToEdit);
         }
 
-        public void DeleteCategory(Category deleteCategory)
+        public void DeleteCategory(Category categoryToDelete)
         {
-            this.dataAccessLayer.DeleteCategory(deleteCategory);
+            this.dataAccessLayer.DeleteCategory(categoryToDelete);
         }
 
+        #endregion
 
-
-
+        #region Event
         public Event GetEventById(int id)
         {
             return this.dataAccessLayer.GetEventById(id);
@@ -69,23 +66,28 @@ namespace My3Business
             return this.dataAccessLayer.GetEvents();
         }
 
+        public List<Event> GetEventsOfUser(int id)
+        {
+            return this.dataAccessLayer.GetEventsOfUser(id);
+        }
+
         public void AddEvent(Event newEvent)
         {
             this.dataAccessLayer.AddEvent(newEvent);
         }
 
-        public void EditEvent(Event editEvent)
+        public void EditEvent(Event eventToEdit)
         {
-            this.dataAccessLayer.EditEvent(editEvent);
+            this.dataAccessLayer.EditEvent(eventToEdit);
         }
 
-        public void DeleteEvent(Event deleteEvent)
+        public void DeleteEvent(Event eventToDelete)
         {
-            this.dataAccessLayer.DeleteEvent(deleteEvent);
+            this.dataAccessLayer.DeleteEvent(eventToDelete);
         }
+        #endregion
 
-
-
+        #region User
         public User GetUserById(int id)
         {
             return this.dataAccessLayer.GetUserById(id);
@@ -96,23 +98,23 @@ namespace My3Business
             return this.dataAccessLayer.GetUsers();
         }
 
-        public void EditUser(User editUser)
+        public void EditUser(User userToEdit)
         {
-            this.dataAccessLayer.EditUser(editUser);
+            this.dataAccessLayer.EditUser(userToEdit);
         }
 
-        public void DeleteUser(User DeleteUser)
+        public void DeleteUser(User userToDelete)
         {
-            this.dataAccessLayer.DeleteUser(DeleteUser);
+            this.dataAccessLayer.DeleteUser(userToDelete);
         }
 
         public void AddNewUser(User newUser)
         {
             this.dataAccessLayer.AddNewUser(newUser);
         }
+        #endregion
 
-
-
+        #region Role
         public List<Role> GetRoles()
         {
             return this.dataAccessLayer.GetRoles();
@@ -120,22 +122,33 @@ namespace My3Business
 
         public Role GetRoleById(int id)
         {
-           return this.dataAccessLayer.GetRoleById(id);
+            return this.dataAccessLayer.GetRoleById(id);
         }
 
-        public void EditRole(Role editeRole)
+        public void EditRole(Role roleToEdit)
         {
-            this.dataAccessLayer.EditRole(editeRole);
+            this.dataAccessLayer.EditRole(roleToEdit);
         }
 
-        public void DeleteRole(Role deleteRole)
+        public void DeleteRole(Role roleToDelete)
         {
-            this.dataAccessLayer.DeleteRole(deleteRole);
+            this.dataAccessLayer.DeleteRole(roleToDelete);
         }
 
         public void AddNewRole(Role newRole)
         {
             this.dataAccessLayer.AddNewRole(newRole);
+        }
+        #endregion
+
+        public User GetUserByEmail(string email)
+        {
+            return this.dataAccessLayer.GetUserByEmail(email);
+        }
+
+        public User GetUserByEmailAndPassword(string email, string password)
+        {
+            return this.dataAccessLayer.GetUserByEmailAndPassword(email, password);
         }
     }
 }

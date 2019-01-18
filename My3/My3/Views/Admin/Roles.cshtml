@@ -12,9 +12,11 @@
     <title>Roles</title>
 </head>
 <body>
-    <p>
-        <input type="button" value="Create New Role" onclick="location.href='@Url.Action("Create","Role")'" class="btn btn-default" />
-  </p>
+    @*<p>
+              <input type="button" value="Create New Role" onclick="location.href='@Url.Action("Create","Role")'" class="btn btn-default" />
+        </p>*@
+    <input type="button" value="Back to Main" onclick="location.href='@Url.Action("Index","Home")'" class="btn btn-info" />
+
     <table class="table">
         <tr>
             <th>
@@ -28,26 +30,27 @@
             </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in @ViewBag.roles) {
-        <tr>
-            <td>
-                @item.ID
-            </td>
-            <td>
-                @item.Code
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", "Role", new { id = item.ID }, null)
-                @Html.ActionLink("Details", "Details", "Role", new { id = item.ID }, null)
-                @Html.ActionLink("Delete", "Delete", "Role", new { id = item.ID }, null)
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in @ViewBag.roles)
+        {
+            <tr>
+                <td>
+                    @item.ID
+                </td>
+                <td>
+                    @item.Code
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", "Role", new { id = item.ID }, null)*@
+                    @Html.ActionLink("Details", "Details", "Role", new { id = item.ID }, null)
+                    @*@Html.ActionLink("Delete", "Delete", "Role", new { id = item.ID }, null)*@
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

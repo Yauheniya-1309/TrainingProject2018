@@ -12,9 +12,11 @@
     <title>Categories</title>
 </head>
 <body>
-    <p>
-        <input type="button" value="Create New Category" onclick="location.href='@Url.Action("CreateCategory","Category")'" class="btn btn-default" />
-   </p>
+    @*<p>
+             <input type="button" value="Create New Category" onclick="location.href='@Url.Action("CreateCategory","Category")'" class="btn btn-default" />
+        </p>*@
+    <input type="button" value="Back to Main" onclick="location.href='@Url.Action("Index","Home")'" class="btn btn-info" />
+
     <table class="table">
         <tr>
             <th>
@@ -23,25 +25,32 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
             <th></th>
         </tr>
-    
-    @foreach (var item in @ViewBag.categories) {
-        <tr>
-            <td>
-                @item.CategoryID
-            </td>
-            <td>
-                @item.Name
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditCategory","Category", new { id=item.ID },null) |
-                @Html.ActionLink("Details", "DetailsCategory", "Category", new { id=item.ID },null) |
-                @Html.ActionLink("Delete", "DeleteCategory", "Category", new { id=item.ID },null)
-            </td>
-        </tr>
-    }
-    
+
+        @foreach (var item in @ViewBag.categories)
+        {
+            <tr>
+                <td>
+                    @item.CategoryID
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Picture
+                </td>
+                <td>
+                    <!-- Html.ActionLink("Edit", "EditCategory","Category", new { CategoryID=item.CategoryID },null) -->
+                    @Html.ActionLink("Details", "DetailsCategory", "Category", new { id = item.CategoryID }, null)
+                    <!--Html.ActionLink("Delete", "DeleteCategory", "Category", new { CategoryID = item.CategoryID },null)-->
+                </td>
+            </tr>
+        }
+
     </table>
 </body>
 </html>

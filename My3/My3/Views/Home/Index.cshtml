@@ -4,39 +4,93 @@
 }
 
 <div class="row clearfix">
-    <div class="col-lg-3 col-md-2 col-sm-2 col-xs-4">
-        <div class="nav navbar-nav">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="card">
+            <img src="~/Content/Picture/back.jpg" />
+            <div class="card-img-overlay">
+                <div class="card-body text-center">
 
-            <a href="~/Event/Create/"><button type="button" class="btn btn-default navbar-btn">Добаваить</button></a>
+                    @{if (@ViewBag.IsValidUser == "Admin")
+                        {
+                            <p><a href='@Url.Action("Events", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn"> All Events</button></a></p>
+                            <p><a href='@Url.Action("Users", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Users</button></a></p>
+                            <p><a href='@Url.Action("Categories", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Categories</button></a></p>
+                            <p><a href='@Url.Action("Roles", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Roles</button></a></p>
+                        }
+
+
+                        if (@ViewBag.IsValidUser == "Editor")
+                        {
+                            <p><a href='@Url.Action("Events", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Events</button></a></p>
+                        }
+
+
+                        if (@User.Identity.IsAuthenticated == true)
+                        {
+                            <p><a href='@Url.Action("Details", "Account", new { id = ViewBag.UserId })'><button type="button" style="width:90%" class="btn btn-info navbar-btn">My Profile</button></a></p>
+                            <p><a href='@Url.Action("Events", "Account", new { id = ViewBag.UserId })'><button type="button" style="width:90%" class="btn btn-info navbar-btn">My Events</button></a></p>
+                        }
+
+                        if (@User.Identity.IsAuthenticated == false)
+                        {
+                            {
+                                          <br />
+                                            <br />
+                                            <div class="text-center">
+                                                <h2> There could be your EVENT, just Register!</h2>
+                                            </div>
+                                            <div class="card-body">
+
+
+
+                                            </div>
+
+                                            <div class="card-body text-center">
+
+                                                <a href="~/Account/Register/"><button type="button" style="width:90%" class="btn btn-info navbar-btn">Register</button></a>
+                                            </div>
+                                 
+                                }
+                            }
+                        }
+            </div>
+
 
         </div>
     </div>
 
+</div>
+
+
+
     @foreach (var temp in @ViewBag.events)
     {
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="card btn-primary">
-                <div class="text-center">
-                    <img class="card-img-top img-fluid  btn-primary" src="@Url.Content(@temp.Picture)" alt="Card image cap" height="100">
-                </div>
-                <div class="card-body">
+            <div class="card">
+                <img src="~/Content/Picture/back.jpg" alt="Picture" class="img-rounded" />
+                <div class="card-img-overlay">
+                    <div class="text-center">
+                        <img class="card-img-top img-fluid" src="@Url.Content(@temp.Picture)" alt="Card image cap" width="100%">
+                    </div>
+                    <div class="card-body">
 
-                    <p class="card-text btn-primary">@temp.Name</p>
-                    <p class="card-text btn-primary">@temp.CategoryID</p>
-                    <h5 class="card-title btn-primary">@temp.Date</h5>
-                    <p class="card-text btn-primary">@temp.Place</p>
-                    
-                </div>
+                        <h4><p class="card-text text-center"><strong>@temp.Name  </strong></p></h4>
+                        <h3><p class="card-text text-center">@temp.Category</p></h3>
+                        <h4 class="card-title text-center ">@temp.Date</h4>
+                        <h3 class="card-text text-center">@temp.Place</h3>
 
-                <div class="card-body btn-primary text-center">
+                    </div>
 
-                    <input type="button" value="More Details" onclick="location.href='@Url.Action("Details","Event",new { id = temp.ID })'" class="btn btn-default" />
+                    <div class="card-body text-bottom text-center ">
 
+                        <input type="button" value="More Details" onclick="location.href='@Url.Action("Details","Event",new { id = temp.ID })'" class="btn btn-default" />
+
+                    </div>
                 </div>
             </div>
         </div>
+
+
     }
-
-
 
 </div>

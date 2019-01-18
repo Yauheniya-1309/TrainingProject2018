@@ -24,119 +24,119 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Бренд или название сайта (отображается в левой части меню) -->
-                <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/Picture/logoEVENT.png" width="50" /></a>
+                <a class="navbar-brand" href="~/Home/Index"><img src="~/Content/Picture/logoEVENT.png" width="100" /></a>
             </div>
             <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
             <div class="collapse navbar-collapse" id="navbar-main">
                 <!-- Содержимое основной части -->
-                <ul class="nav navbar-nav">
-                    <li><a href="~/Admin/Events">Events</a></li>
-                    <li><a href="~/Admin/Users">Users</a></li>
-                    <li><a href="~/Admin/Categories">Categories</a></li>
-                    <li><a href="~/Admin/Roles">Roles</a></li>
-                   
- 
-                </ul>
-                
-              
-                    <div class="nav navbar-nav navbar-right">
-                        
-                        <a href="~/User/Entrance/"><button type="button" class="btn btn-default navbar-btn">Войти</button></a>
-                        <a href="~/User/Register/"><button type="button" class="btn btn-info navbar-btn">Регистрация</button></a>
-</div>                  
+
+                <a href='@Url.Action("Index","Home")'><button type="button" class="btn btn-success navbar-btn">ALL</button></a>
+                <a href='@Url.Action("Film","Home")'><button type="button" class="btn btn-info navbar-btn">Film</button></a>
+                <a href='@Url.Action("Music","Home")'><button type="button" class="btn btn-danger navbar-btn">Music</button></a>
+                <a href='@Url.Action("Sports","Home")'><button type="button" class="btn btn-warning navbar-btn">Sports</button></a>
+                <a href='@Url.Action("Theatre","Home")'><button type="button" class="btn btn-primary navbar-btn">Theatre</button></a>
+                <a href='@Url.Action("Exhibition","Home")'><button type="button" class="btn btn-warning navbar-btn">Exhibition</button></a>
+                <a href='@Url.Action("Family","Home")'><button type="button" class="btn btn-danger navbar-btn">Family</button></a>
+                <a href='@Url.Action("Party","Home")'><button type="button" class="btn btn-info navbar-btn">Party</button></a>
+
+
+                <div class="nav navbar-nav navbar-right">
+
+                    @{if (@User.Identity.IsAuthenticated == false)
+
+                        { <a href="~/Account/Login/"><button type="button" class="btn btn-default navbar-btn">Login</button></a>
+                        <a href="~/Account/Register/"><button type="button" class="btn btn-info navbar-btn">Register</button></a>
+                        }
+                        else
+                        {
+                            @User.Identity.Name
+                            <a href="~/Account/Logoff/"><button type="button" class="btn btn-info navbar-btn">Logout</button></a>
+
+                        }
+                    }
+                </div>
             </div>
         </div>
     </nav>
 
 
 
-    
-
-
-
-
-
-
-
-
-
-
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
-                <div class="jumbotron"> </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6" padding-bottom="20px">
-                <p>a</p>
-                <p>b</p>
-                <div class="card-body"><h4>@ViewBag.Weather</h4></div>
-               
-                <p > </p>
-            </div>
-    </div>
-        </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="jumbotron">
 
-
-   
-    <nav class="navbar navbar-expand-lg navbar-default">
-       
-            <div class="container">
-                <!-- Заголовок -->
-                <div class="navbar-header">
-                    <!-- Кнопка «Гамбургер» отображается только в мобильном виде (предназначена для открытия основного содержимого Navbar) -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-search">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Бренд или название сайта (отображается в левой части меню) -->
-                    <a class="navbar-brand" href="#">LOOKING FOR</a>
+                    <div class="card-body zzz"><h3 class="text-center">@ViewBag.Weather</h3></div>
+                    <h2 class="card-body zzz">@ViewBag.Time</h2>
+                    <p> </p>
                 </div>
-                <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
-                <div class="collapse navbar-collapse" id="navbar-search">
-                    <form class="navbar-form  form-inline" role="search">
-                
-                                     
+            </div>
+        </div>
+    </div>
 
-                        <input type="text" id="my_input_submit" class="form-control" placeholder="Event">
 
-                        <select class="form-control" id="my_input_submit">
-                            <option value="">Category</option>
-                            <option value="music">Music</option>
-                            <option value="film">Film</option>
-                            <option value="fashion">Fashion</option>
-                            <option value="sports">Sports</option>
-                            <option value="buisness">Buisness</option>
-                            <option value="family">Family</option>
+
+    <nav class="navbar navbar-expand-lg navbar-default">
+
+        <div class="container">
+            <!-- Заголовок -->
+            <div class="navbar-header">
+                <!-- Кнопка «Гамбургер» отображается только в мобильном виде (предназначена для открытия основного содержимого Navbar) -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-search">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Бренд или название сайта (отображается в левой части меню) -->
+                <a class="navbar-brand" href="#">LOOKING FOR</a>
+            </div>
+            <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
+            <div class="collapse navbar-collapse" id="navbar-search">
+                @*<form class="navbar-form  form-inline" role="search" name="search">*@
+                @using (Html.BeginForm("Search", "Event", FormMethod.Post))
+                {
+
+                    <input type="text" id="searchEvent" class="form-control" placeholder="Event" name="searchEvent" style="display:inline">
+
+                    <select class="form-control" id="searchCategory" name="searchCategory" style="display:inline">
+                        <option value="">Category</option>
+                        <option value="Film">Film</option>
+                        <option value="Music">Music</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Theatre">Theatre</option>
+                        <option value="Exhibition">Exhibition</option>
+                        <option value="Family">Family</option>
+                        <option value="Party">Party</option>
+                    </select>
+
+
+                        <select class="form-control" id="searchStatus" name="searchStatus" style="display:inline">
+                            <option value="">Status</option>
+                            <option value="Completed">Completed</option>
+                            <option value="In progress">In progress</option>
+                            <option value="Planned">Planned</option>
+
+
+
                         </select>
 
 
-                        <select class="form-control" id="my_input_submit">
-                            <option value="">Status</option>
-                            <option value="completed">Completed</option>
-                            <option value="inprogress">In progress</option>
-                            <option value="planned">Planned</option>
-                        
-                             
-                               
-                       </select>
-                     OR
-                        <input type="date" value="exactdate" class="form-control" id="date" name="date" placeholder="Дата" /> 
-                        <button class="btn btn-success" id="my_input_submit" type="submit">Search</button>
-                    </form>
-                </div>
+                      <!--  <button class="btn btn-success" id="my_input_submit" type="submit">Search</button> -->
+                        <a href='@Url.Action("Search", "Event", "search")'><button type="submit" class="btn btn-success navbar-btn">Search</button></a>
+                        <a href='@Url.Action("Index", "Home")'><button type="button" class="btn btn-danger navbar-btn">Cancel</button></a>
+
+                }
+
+                @*</form>*@
             </div>
-</nav>
-    
+        </div>
+    </nav>
 
-
-   
 
 
     <div class="container">
         @RenderBody()
-    </div>  
+    </div>
     <hr />
     <footer>
         <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>

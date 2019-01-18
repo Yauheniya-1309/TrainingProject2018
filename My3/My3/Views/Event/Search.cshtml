@@ -1,0 +1,111 @@
+﻿@model My3Common.Event
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row clearfix">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="card">
+            <img src="~/Content/Picture/back.jpg" />
+            <div class="card-img-overlay">
+                <div class="card-body text-center">
+
+                    @{if (@ViewBag.IsValidUser == "Admin")
+                        {
+                            <p><a href='@Url.Action("Events", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Events</button></a></p>
+                            <p><a href='@Url.Action("Users", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Users</button></a></p>
+                            <p><a href='@Url.Action("Categories", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Categories</button></a></p>
+                            <p><a href='@Url.Action("Roles", "Admin")'><button type="button"style="width:90%" class="btn btn-success navbar-btn">All Roles</button></a></p>
+                        }
+
+
+                        if (@ViewBag.IsValidUser == "Editor")
+                        {
+                            <p><a href='@Url.Action("Events", "Admin")'><button type="button" style="width:90%" class="btn btn-success navbar-btn">All Events</button></a></p>
+                        }
+
+
+                        if (@User.Identity.IsAuthenticated == true)
+                        {
+                            <p><a href='@Url.Action("Details", "Account", new { id = ViewBag.UserId })'><button type="button"style="width:90%" class="btn btn-info navbar-btn">My Profile</button></a></p>
+                            <p><a href='@Url.Action("Events", "Account", new { id = ViewBag.UserId })'><button type="button"style="width:90%" class="btn btn-info navbar-btn">My Events</button></a></p>
+                        }
+
+                        if (@User.Identity.IsAuthenticated == false)
+                        {
+                            {
+                                <br />
+                                        <br />
+                                            <div class="text-center">
+                                                <h2> There could be your EVENT, just Register!</h2>
+                                            </div>
+                                            <div class="card-body">
+
+
+
+                                            </div>
+
+                                            <div class="card-body text-center">
+
+                                                <a href="~/Account/Register/"><button type="button" style="width:90%" class="btn btn-info navbar-btn">Register</button></a>
+                                            </div>
+
+                            }
+                        }
+                    }
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    @if (@ViewBag.noEvents != null)
+    {
+        <h3>@ViewBag.noEvents</h3>
+    }
+    else
+    {
+        foreach (var temp in @ViewBag.events)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card">
+                    <img src="~/Content/Picture/back.jpg" alt="Picture" class="img-rounded" />
+                    <div class="card-img-overlay">
+                        <div class="text-center">
+                            <img class="card-img-top img-fluid" src="@Url.Content(@temp.Picture)" alt="Card image cap" width="100%">
+                        </div>
+                        <div class="card-body">
+
+                            <h4><p class="card-text text-center"><strong>@temp.Name  </strong></p></h4>
+                            <h3><p class="card-text text-center">@temp.Category</p></h3>
+                            <h4 class="card-title text-center ">@temp.Date</h4>
+                            <h3 class="card-text text-center">@temp.Place</h3>
+
+                        </div>
+
+                        <div class="card-body text-bottom text-center ">
+
+                            <input type="button" value="More Details" onclick="location.href='@Url.Action("Details", "Event", new { id = temp.ID })'" class="btn btn-default" />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+
+    }
+
+
+</div>
+
+

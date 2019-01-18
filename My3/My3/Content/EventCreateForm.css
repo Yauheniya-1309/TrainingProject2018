@@ -1,0 +1,179 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+    background: #2c3e50; /*From http://flatuicolors.com/ */
+}
+
+form {
+    position: relative;
+    width: 520px;
+    height: 550px;
+    margin: 10px auto;
+    background: #ecf0f1;
+    padding: 10px;
+    -webkit-border-radius: 20px 0 0 0;
+    -moz-border-radius: 20px 0 0 0;
+    border-radius: 20px 0 0 0;
+    -webkit-box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
+    -moz-box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
+    box-shadow: 0px 1px 0px #ad392d, inset 0px 1px 0px white;
+    box-shadow: 20px 20px 20px;
+}
+
+h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #774489;
+    text-shadow: 1px 1px 0px white;
+}
+
+input {
+    width: 315px;
+    padding: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+    margin-bottom: 12px;
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+    input:focus {
+        background: #fafafa;
+    }
+
+
+li {
+    position: absolute;
+    right: 40px;
+    bottom: 62px;
+    list-style: none;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #7f8c8d;
+    font-weight: 400;
+    text-shadow: 1px 1px 0px white;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+button {
+    width: 300px;
+    margin-top: 10px;
+    background: #774489;
+    color: #fff;
+    font-weight: 400;
+    text-shadow: 1px 1px 0px #2d7baf;
+    box-shadow: 0px 3px 0px #2d7baf;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+
+input[type="button"] {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+    background-color: #774489;
+    margin-bottom: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+    background-color: #774489;
+    margin-bottom: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input[type="radio"] {
+    width: 55px;
+    padding: 4px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+    background-color: #774489;
+    margin-bottom: 12px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+textarea {
+    resize:none;
+    display: block;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+    margin-bottom: 14px;
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+select {
+    display: block;
+    width: 350px;
+    padding: 14px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    border: 0;
+    margin-bottom: 12px;
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}

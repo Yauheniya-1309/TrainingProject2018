@@ -34,7 +34,7 @@
                     @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @readonly = "readonly" } })
                 </div>
 
-               
+
                 <div class="form-actions no-color">
                     <input type="submit" value="Delete" onclick="location.href='@Url.Action("Delete","Role",new { id = Model.ID })'" class="btn btn-default" />
                     <input type="button" value="Back to List" onclick="location.href='@Url.Action("Roles","Admin")'" class="btn btn-default" />

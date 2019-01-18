@@ -1,59 +1,26 @@
-﻿using My3Common;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace My3DataAccess
+﻿namespace My3DataAccess
 {
+    #region User
+ 
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Data;
+    using System.Data.SqlClient;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using My3Common;
+    
+    #endregion
+
     public class DataAccessLayer : IDataAccessLayer
     {
-        private SqlConnection myConnection;
-
         private readonly string ConnectionString = ConfigurationManager.ConnectionStrings["My3EventDataBase"].ConnectionString;
-
-       
+        private SqlConnection myConnection;
         
-        //public User GetUserByLogin(string userName, string userPassword)
-        //{
-
-        //    User result = null;
-
-        //    using (this.myConnection = new SqlConnection(this.ConnectionString))
-        //    {
-        //        string sqlCommand = "exec sp_GetUserById @Name, @Password";
-
-        //        SqlCommand cmd = new SqlCommand(sqlCommand, this.myConnection);
-        //        cmd.Parameters.AddWithValue("@Name", userName);
-        //        cmd.Parameters.AddWithValue("@Password", userPassword);
-
-        //        this.myConnection.Open();
-
-        //        using (SqlDataReader reader = cmd.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                result = new User
-        //                {
-        //                    Name = (string)reader["Name"],
-        //                    ID = (int)reader["UserID"],
-        //                    Email = (string)reader["E-mail"]
-        //                };
-        //            }
-        //        }
-        //    }
-        //    return result;
-        //}
-
-
-
         public User GetUserById(int id)
         {
-
             User res = null;
 
             using (this.myConnection = new SqlConnection(this.ConnectionString))
@@ -61,8 +28,11 @@ namespace My3DataAccess
                 string sqlCommand = "exec sp_GetOrganazerById @Id";
 
                 SqlCommand cmd = new SqlCommand(sqlCommand, this.myConnection);
+
                 cmd.Parameters.AddWithValue("@Id", id);
+
                 myConnection.Open();
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -76,13 +46,97 @@ namespace My3DataAccess
                             Password = (string)reader["Password"],
                             AddedDate = (DateTime)reader["AddedDate"],
                             PhoneNumber = (string)reader["PhoneNumber"],
-                            Role = (string)reader["Role"]
+                            Role = (string)reader["Role"],
+                            ConfirmPassword= (string)reader["Password"]
+                        };
+                    }
+       
+                    myConnection.Close();
+                }   
+            }
+
+            return res;
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            User res = null;
+        
+            using (this.myConnection = new SqlConnection(this.ConnectionString))
+            {
+                string sqlCommand = "exec sp_GetOrganazerByEmail @Email";
+
+                SqlCommand cmd = new SqlCommand(sqlCommand, this.myConnection);
+
+                cmd.Parameters.AddWithValue("@Email", email);
+
+                myConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        res = new User
+                        {
+                            ID = (int)reader["Id"],
+                            Name = (string)reader["Name"],
+                            Login = (string)reader["Login"],
+                            Email = (string)reader["Email"],
+                            Password = (string)reader["Password"],
+                            AddedDate = (DateTime)reader["AddedDate"],
+                            PhoneNumber = (string)reader["PhoneNumber"],
+                            Role = (string)reader["Role"],
+                            ConfirmPassword= (string)reader["Password"]
+                        };
+                    }
+                }
+                myConnection.Close();
+            }
+          
+            return res;
+        }
+
+        public User GetUserByEmailAndPassword(string email, string password)
+        {
+            User res = null;
+
+            using (this.myConnection = new SqlConnection(this.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = "sp_GetOrganazerByEmailAndPassword",
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = myConnection
+                };
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Password", password);
+
+                myConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        res = new User
+                        {
+                            ID = (int)reader["Id"],
+                            Name = (string)reader["Name"],
+                            Login = (string)reader["Login"],
+                            Email = (string)reader["Email"],
+                            Password = (string)reader["Password"],
+                            AddedDate = (DateTime)reader["AddedDate"],
+                            PhoneNumber = (string)reader["PhoneNumber"],
+                            Role = (string)reader["Role"],
+                            ConfirmPassword = (string)reader["Password"]
                         };
 
                     }
+                   
                 }
+
+                myConnection.Close();
             }
-            myConnection.Close();
+
             return res;
         }
 
@@ -90,19 +144,20 @@ namespace My3DataAccess
         {
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
-
-
                 SqlCommand cmd1 = new SqlCommand
                 {
                     CommandText = "sp_GetIdOfRoleByName",
                     CommandType = CommandType.StoredProcedure,
                     Connection = myConnection
                 };
-                cmd1.Parameters.AddWithValue("@Name", editUser.Role);
-                myConnection.Open();
-                int id = (int)cmd1.ExecuteScalar();
-                myConnection.Close();
 
+                cmd1.Parameters.AddWithValue("@Name", editUser.Role);
+
+                myConnection.Open();
+
+                int id = (int)cmd1.ExecuteScalar();
+
+                myConnection.Close();
 
                 SqlCommand cmd = new SqlCommand
                 {
@@ -121,69 +176,78 @@ namespace My3DataAccess
                 cmd.Parameters.AddWithValue("@roleId", id);
 
                 myConnection.Open();
+
                 int rowsAffected = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
 
             }
         }
 
-        public void DeleteUser(User deleteUser)
+        public void DeleteUser(User userToDelete)
         {
 
-            using (this.myConnection = new SqlConnection(this.ConnectionString))
-            {
+            SqlConnection myConnection = new SqlConnection(this.ConnectionString);
 
-                SqlCommand cmd = new SqlCommand
+            this.DeleteEventsOfUser(userToDelete.ID);
+
+            SqlCommand cmd = new SqlCommand
                 {
                     CommandText = "sp_DeleteUser",
                     CommandType = CommandType.StoredProcedure,
                     Connection = myConnection
                 };
 
-                cmd.Parameters.AddWithValue("@id", deleteUser.ID);
+                cmd.Parameters.AddWithValue("@id", userToDelete.ID);
 
                 myConnection.Open();
+
                 int roewsaffected = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
-            }
         }
 
         public void AddNewUser(User newUser)
         {
-                using (this.myConnection = new SqlConnection(this.ConnectionString))
+            using (this.myConnection = new SqlConnection(this.ConnectionString))
+            {
+                SqlCommand cmd1 = new SqlCommand
                 {
-                    SqlCommand cmd1 = new SqlCommand
-                    {
-                        CommandText = "sp_GetIdOfRoleByName",
-                        CommandType = CommandType.StoredProcedure,
-                        Connection = myConnection
-                    };
-                    cmd1.Parameters.AddWithValue("@Name", newUser.Role);
-                    myConnection.Open();
-                    int id = (int)cmd1.ExecuteScalar();
-                    myConnection.Close();
+                    CommandText = "sp_GetIdOfRoleByName",
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = myConnection
+                };
 
-                    SqlCommand cmd = new SqlCommand
-                    {
-                        CommandText = "sp_InsertUser",
-                        CommandType = CommandType.StoredProcedure,
-                        Connection = myConnection
-                    };
+                cmd1.Parameters.AddWithValue("@Name", newUser.Role);
 
-                    cmd.Parameters.AddWithValue("@name", newUser.Name);
-                    cmd.Parameters.AddWithValue("@email", newUser.Email);
-                    cmd.Parameters.AddWithValue("@password", newUser.Password);
-                    cmd.Parameters.AddWithValue("@addeddate", newUser.AddedDate);
-                    cmd.Parameters.AddWithValue("@phone", newUser.PhoneNumber);
-                    cmd.Parameters.AddWithValue("@roleid", id);
-                    cmd.Parameters.AddWithValue("@login", newUser.Login);
+                myConnection.Open();
 
-                    myConnection.Open();
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    myConnection.Close();
+                int id = (int)cmd1.ExecuteScalar();
 
-                }
+                myConnection.Close();
+
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = "sp_InsertUser",
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = myConnection
+                };
+
+                cmd.Parameters.AddWithValue("@name", newUser.Name);
+                cmd.Parameters.AddWithValue("@email", newUser.Email);
+                cmd.Parameters.AddWithValue("@password", newUser.Password);
+                cmd.Parameters.AddWithValue("@addeddate", newUser.AddedDate);
+                cmd.Parameters.AddWithValue("@phone", newUser.PhoneNumber);
+                cmd.Parameters.AddWithValue("@roleid", id);
+                cmd.Parameters.AddWithValue("@login", newUser.Login);
+
+                myConnection.Open();
+
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                myConnection.Close();
             }
+        }
 
         public List<User> GetUsers()
         {
@@ -211,17 +275,15 @@ namespace My3DataAccess
                         res.AddedDate = (DateTime)reader["AddedDate"];
                         res.PhoneNumber = (string)reader["PhoneNumber"];
                         res.Role = (string)reader["Role"];
-
-
+                        res.ConfirmPassword = res.Password;
                         result.Add(res);
+                        
                     }
                 }
             }
+
             return result;
         }
-
-
-
 
         public List<Event> GetEvents()
         {
@@ -248,15 +310,58 @@ namespace My3DataAccess
                         res.Date = (DateTime)reader["Date"];
                         res.Description = (string)reader["Description"];
                         res.Picture = (string)reader["Picture"];
-                        res.CategoryID = (int)reader["CategoryID"];
-                        res.Categories = GetCategories();
+                        res.Category = (string)reader["Category"];
+                        res.Status = ((res.Date < DateTime.Now) ? "Completed" : (res.Date > DateTime.Now) ? "Planned" : "In progress");
                         result.Add(res);
                     }
                 }
             }
+
             return result;
         }
-     
+
+        public List<Event> GetEventsOfUser(int id)
+        {
+            List<Event> result = new List<Event>();
+
+            using (this.myConnection = new SqlConnection(this.ConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand
+                {
+                    CommandText = "sp_GetEventsOfUser",
+                    CommandType = CommandType.StoredProcedure,
+                    Connection = myConnection
+                };
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                myConnection.Open();
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var res = new Event();
+
+                        res.Name = (string)reader["Name"];
+                        res.ID = (int)reader["Id"];
+                        res.Place = (string)reader["Place"];
+                        res.UserName = (string)reader["Organizer"];
+                        res.Date = (DateTime)reader["Date"];
+                        res.Description = (string)reader["Description"];
+                        res.Picture = (string)reader["Picture"];
+                        res.Category = (string)reader["Category"];
+                        res.Status = ((res.Date < DateTime.Now) ? "Completed" : (res.Date > DateTime.Now) ? "Planned" : "In progress");
+                        result.Add(res);
+                    }
+                }
+
+                myConnection.Close();
+            }
+
+            return result;
+        }
+
         public Event GetEventById(int id)
         {
 
@@ -267,8 +372,11 @@ namespace My3DataAccess
                 string sqlCommand = "exec sp_GetEventById @id";
 
                 SqlCommand cmd = new SqlCommand(sqlCommand, this.myConnection);
+
                 cmd.Parameters.AddWithValue("@id", id);
+
                 myConnection.Open();
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -282,33 +390,33 @@ namespace My3DataAccess
                             Date = (DateTime)reader["Date"],
                             Description = (string)reader["Description"],
                             Picture = (string)reader["Picture"],
-                            CategoryID = (int)reader["CategoryID"],
-                            Categories = GetCategories()
-                    };
-                        
+                            Category = (string)reader["Category"]
+                        };
+
+                        result.Status = ((result.Date < DateTime.Now) ? "Completed" : (result.Date > DateTime.Now) ? "Planned" : "In progress");
                     }
                 }
+
+                myConnection.Close();
             }
-            myConnection.Close();
+            
             return result;
         }
 
         public void AddEvent(Event newEvent)
         {
+            int id1, id2;
+
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
                 SqlCommand cmd1 = new SqlCommand
                 {
-                    CommandText = "sp_GetIdOfOrganazerByName",
+                    CommandText = "sp_GetIdOfOrganazerByEmail",
                     CommandType = CommandType.StoredProcedure,
                     Connection = myConnection
                 };
-                cmd1.Parameters.AddWithValue("@Name", newEvent.UserName);
-                myConnection.Open();
-                int id1 = (int)cmd1.ExecuteScalar();
-                myConnection.Close();
 
-
+                cmd1.Parameters.AddWithValue("@Email", newEvent.UserName);
 
                 SqlCommand cmd2 = new SqlCommand
                 {
@@ -316,52 +424,59 @@ namespace My3DataAccess
                     CommandType = CommandType.StoredProcedure,
                     Connection = myConnection
                 };
-                cmd2.Parameters.AddWithValue("@Name", newEvent.CategoryID);
-                myConnection.Open();
-                int id2 = (int)cmd2.ExecuteScalar();
-                myConnection.Close();
 
-
-                SqlCommand cmd = new SqlCommand
-                {
-                    CommandText = "sp_InsertEvent",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = myConnection
-                };
-
-                cmd.Parameters.AddWithValue("@name", newEvent.Name);
-                cmd.Parameters.AddWithValue("@userId", id1);
-                cmd.Parameters.AddWithValue("@data", newEvent.Date);
-                cmd.Parameters.AddWithValue("@description", newEvent.Description);
-                cmd.Parameters.AddWithValue("@place", newEvent.Place);
-                cmd.Parameters.AddWithValue("@picture", newEvent.Picture);
-                cmd.Parameters.AddWithValue("@category", id2);
-               
+                cmd2.Parameters.AddWithValue("@Name", newEvent.Category);
 
                 myConnection.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                myConnection.Close();
 
+                id1 = (int)cmd1.ExecuteScalar();
+
+                id2 = (int)cmd2.ExecuteScalar();
+
+                myConnection.Close();
             }
+
+            SqlConnection my1Connection = new SqlConnection(this.ConnectionString);
+
+            string PictureCategory = GetCategoryById(id2).Picture;
+
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "sp_InsertEvent",
+                CommandType = CommandType.StoredProcedure,
+                Connection = my1Connection
+            };
+
+            cmd.Parameters.AddWithValue("@name", newEvent.Name);
+            cmd.Parameters.AddWithValue("@userID", id1);
+            cmd.Parameters.AddWithValue("@data", newEvent.Date);
+            cmd.Parameters.AddWithValue("@description", newEvent.Description);
+            cmd.Parameters.AddWithValue("@place", newEvent.Place);
+            cmd.Parameters.AddWithValue("@picture", PictureCategory);
+            cmd.Parameters.AddWithValue("@category", id2);
+
+            my1Connection.Open();
+
+            int rowsAffected = cmd.ExecuteNonQuery();
+
+            my1Connection.Close();
+
         }
 
-        public void EditEvent(Event editEvent)
+        public void EditEvent(Event eventToEdit)
         {
+            int id1, id2;
+
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
-
                 SqlCommand cmd1 = new SqlCommand
                 {
-                    CommandText = "sp_GetIdOfOrganazerByName",
+                    CommandText = "sp_GetIdOfOrganazerByEmail",
                     CommandType = CommandType.StoredProcedure,
                     Connection = myConnection
                 };
-                cmd1.Parameters.AddWithValue("@Name", editEvent.UserName);
-                myConnection.Open();
-                int id1 = (int)cmd1.ExecuteScalar();
-                myConnection.Close();
 
-
+                cmd1.Parameters.AddWithValue("@Email", eventToEdit.UserName);
 
                 SqlCommand cmd2 = new SqlCommand
                 {
@@ -369,71 +484,90 @@ namespace My3DataAccess
                     CommandType = CommandType.StoredProcedure,
                     Connection = myConnection
                 };
-                cmd2.Parameters.AddWithValue("@Name", editEvent.CategoryID);
+
+                cmd2.Parameters.AddWithValue("@Name", eventToEdit.Category);
+
                 myConnection.Open();
-                int id2 = (int)cmd2.ExecuteScalar();
+
+                id1 = (int)cmd1.ExecuteScalar();
+
+                id2 = (int)cmd2.ExecuteScalar();
+
                 myConnection.Close();
-
-                SqlCommand cmd = new SqlCommand
-                {
-                    CommandText = "sp_EditEventById",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = myConnection
-                };
-
-                cmd.Parameters.AddWithValue("@id", editEvent.ID);
-                cmd.Parameters.AddWithValue("@name", editEvent.Name);
-                cmd.Parameters.AddWithValue("@userID", id1);
-                cmd.Parameters.AddWithValue("@data", editEvent.Date);
-                cmd.Parameters.AddWithValue("@description", editEvent.Description);
-                cmd.Parameters.AddWithValue("@place", editEvent.Place);
-                cmd.Parameters.AddWithValue("@picture", editEvent.Picture);
-                cmd.Parameters.AddWithValue("@category", id2);
-            
-                myConnection.Open();
-                int rowsAffected = cmd.ExecuteNonQuery();
-                myConnection.Close();
-
             }
+
+            SqlConnection my1Connection = new SqlConnection(this.ConnectionString);
+
+            string PictureCategory = GetCategoryById(id2).Picture;
+
+            SqlCommand cmd = new SqlCommand
+            {
+                CommandText = "sp_EditEventById",
+                CommandType = CommandType.StoredProcedure,
+                Connection = my1Connection
+            };
+
+            cmd.Parameters.AddWithValue("@id", eventToEdit.ID);
+            cmd.Parameters.AddWithValue("@name", eventToEdit.Name);
+            cmd.Parameters.AddWithValue("@userID", id1);
+            cmd.Parameters.AddWithValue("@data", eventToEdit.Date);
+            cmd.Parameters.AddWithValue("@description", eventToEdit.Description);
+            cmd.Parameters.AddWithValue("@place", eventToEdit.Place);
+            cmd.Parameters.AddWithValue("@picture", PictureCategory);
+            cmd.Parameters.AddWithValue("@category", id2);
+
+            my1Connection.Open();
+
+            int rowsAffected = cmd.ExecuteNonQuery();
+
+            my1Connection.Close();
+
         }
 
-        public void DeleteEvent(Event deleteEvent)
+        public void DeleteEvent(Event eventToDelete)
         {
-            using (this.myConnection = new SqlConnection(this.ConnectionString))
+            if (eventToDelete.Date > DateTime.Now)
             {
-                SqlCommand cmd = new SqlCommand
+                using (this.myConnection = new SqlConnection(this.ConnectionString))
                 {
-                    CommandText = "sp_DeleteEvent",
-                    CommandType = CommandType.StoredProcedure,
-                    Connection = myConnection
-                };
-                    cmd.Parameters.AddWithValue("@id", deleteEvent.ID);
+                    SqlCommand cmd = new SqlCommand
+                    {
+                        CommandText = "sp_DeleteEvent",
+                        CommandType = CommandType.StoredProcedure,
+                        Connection = myConnection
+                    };
+                    cmd.Parameters.AddWithValue("@id", eventToDelete.ID);
 
-                myConnection.Open();
-                cmd.ExecuteNonQuery();
-                myConnection.Close();
+                    myConnection.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    myConnection.Close();
                 }
             }
-
-            //using (this.myConnection = new SqlConnection(this.ConnectionString))
-            //{
-
-            //    SqlCommand cmd = new SqlCommand
-            //    {
-            //        CommandText = "exec sp_DeleteUser @id",
-            //        CommandType = CommandType.StoredProcedure,
-            //        Connection = myConnection
-            //    };
-
-            //    cmd.Parameters.AddWithValue("@id", id);
-
-            //    cmd.ExecuteNonQuery();
-
-            //}
-        
+        }
 
 
+        public void DeleteEventsOfUser(int userId)
+        {        
+                using (this.myConnection = new SqlConnection(this.ConnectionString))
+                {
+                    SqlCommand cmd = new SqlCommand
+                    {
+                        CommandText = "sp_DeleteEventsOfUser",
+                        CommandType = CommandType.StoredProcedure,
+                        Connection = myConnection
+                    };
+                    cmd.Parameters.AddWithValue("@id", userId);
 
+                    myConnection.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    myConnection.Close();
+              
+            }
+        }
 
         public Role GetRoleById(int id)
         {
@@ -448,6 +582,7 @@ namespace My3DataAccess
                     Connection = myConnection
                 };
                 cmd.Parameters.AddWithValue("@Id", id);
+
                 myConnection.Open();
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -463,12 +598,14 @@ namespace My3DataAccess
 
                     }
                 }
+
+                myConnection.Close();
             }
-            myConnection.Close();
-                return res;
+
+            return res;
         }
-        
-        public void EditRole(Role editRole)
+
+        public void EditRole(Role roleToEdit)
         {
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
@@ -480,19 +617,20 @@ namespace My3DataAccess
                     Connection = myConnection
                 };
 
-                cmd.Parameters.AddWithValue("@id", editRole.ID);
-                cmd.Parameters.AddWithValue("@name", editRole.Name);
-                cmd.Parameters.AddWithValue("@code", editRole.Code);
-         
+                cmd.Parameters.AddWithValue("@id", roleToEdit.ID);
+                cmd.Parameters.AddWithValue("@name", roleToEdit.Name);
+                cmd.Parameters.AddWithValue("@code", roleToEdit.Code);
 
                 myConnection.Open();
+
                 int rowsAffected = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
 
             }
         }
 
-        public void DeleteRole(Role deleteRole)
+        public void DeleteRole(Role roleToDelete)
         {
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
@@ -504,10 +642,12 @@ namespace My3DataAccess
                     Connection = myConnection
                 };
 
-                cmd.Parameters.AddWithValue("@id", deleteRole.ID);
+                cmd.Parameters.AddWithValue("@id", roleToDelete.ID);
 
                 myConnection.Open();
-                int roewsaffected=cmd.ExecuteNonQuery();
+
+                int roewsaffected = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
             }
         }
@@ -525,10 +665,13 @@ namespace My3DataAccess
                 };
 
                 cmd.Parameters.AddWithValue("@name", newRole.Name);
+
                 cmd.Parameters.AddWithValue("@code", newRole.Code);
 
-                myConnection.Open();            
+                myConnection.Open();
+
                 int rows = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
             }
 
@@ -543,7 +686,9 @@ namespace My3DataAccess
                 string sqlCommand = "exec sp_getRoles";
 
                 SqlCommand cmd = new SqlCommand(sqlCommand, this.myConnection);
+
                 myConnection.Open();
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -557,15 +702,13 @@ namespace My3DataAccess
                         result.Add(res);
                     }
                 }
+
+                myConnection.Close();
             }
-            myConnection.Close();
+
             return result;
         }
 
-
-
-     
-  
 
         public List<Category> GetCategories()
         {
@@ -587,13 +730,15 @@ namespace My3DataAccess
 
                         res.CategoryID = (int)reader["Id"];
                         res.Name = (string)reader["Name"];
-
+                        res.Picture = (string)reader["PicturePath"];
 
                         result.Add(res);
                     }
                 }
+
+                myConnection.Close();
             }
-            myConnection.Close();
+            
             return result;
         }
 
@@ -606,8 +751,11 @@ namespace My3DataAccess
                 string sqlCommand = "exec sp_GetCategoryById @Id";
 
                 SqlCommand cmd = new SqlCommand(sqlCommand, this.myConnection);
+
                 cmd.Parameters.AddWithValue("@Id", id);
+
                 myConnection.Open();
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -615,13 +763,16 @@ namespace My3DataAccess
                         res = new Category
                         {
                             CategoryID = (int)reader["Id"],
-                            Name = (string)reader["Name"]
+                            Name = (string)reader["Name"],
+                            Picture = (string)reader["PicturePath"]
                         };
 
                     }
                 }
+
+                myConnection.Close();
             }
-            myConnection.Close();
+            
             return res;
         }
 
@@ -629,7 +780,7 @@ namespace My3DataAccess
         {
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
-                
+
                 SqlCommand cmd = new SqlCommand
                 {
                     CommandText = "sp_InsertCategory",
@@ -640,12 +791,14 @@ namespace My3DataAccess
                 cmd.Parameters.AddWithValue("@name", newCategory.Name);
 
                 myConnection.Open();
-                int rows=cmd.ExecuteNonQuery();
+
+                int rows = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
             }
         }
 
-        public void EditCategory(Category editCategory)
+        public void EditCategory(Category categoryToEdit)
         {
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
@@ -657,16 +810,18 @@ namespace My3DataAccess
                     Connection = myConnection
                 };
 
-                cmd.Parameters.AddWithValue("@id", editCategory.CategoryID);
-                cmd.Parameters.AddWithValue("@name", editCategory.Name);
+                cmd.Parameters.AddWithValue("@id", categoryToEdit.CategoryID);
+                cmd.Parameters.AddWithValue("@name", categoryToEdit.Name);
 
                 myConnection.Open();
+
                 int rowsAffected = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
             }
         }
 
-        public void DeleteCategory(Category deleteCategory)
+        public void DeleteCategory(Category categoryToDelete)
         {
             using (this.myConnection = new SqlConnection(this.ConnectionString))
             {
@@ -678,10 +833,12 @@ namespace My3DataAccess
                     Connection = myConnection
                 };
 
-                cmd.Parameters.AddWithValue("@id", deleteCategory.CategoryID);
+                cmd.Parameters.AddWithValue("@id", categoryToDelete.CategoryID);
 
                 myConnection.Open();
+
                 int roewsaffected = cmd.ExecuteNonQuery();
+
                 myConnection.Close();
             }
         }
